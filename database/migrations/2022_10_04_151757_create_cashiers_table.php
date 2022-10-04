@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('cashiers', function (Blueprint $table) {
             $table->id();
+            $table->string('name_cashier');
+            // $table->
             $table->timestamps();
         });
     }
