@@ -31,8 +31,7 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },UndefinedUndefined type 'Symfony\Component\Console\Input\ArgvInput'.intelephense(1009)
-    type 'Symfony\Component\Console\Input\ArgvInput'.intelephense(1009)
+    },
 
     "scripts": {
         "post-autoload-dump": [
