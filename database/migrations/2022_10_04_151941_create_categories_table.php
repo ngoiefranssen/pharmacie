@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pharmacist_id')->constrained()->onDelete('CASCADE');
+            $table->string('name_category');
+            $table->string('description_category');
             $table->timestamps();
         });
     }
