@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('ordereds', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('patient_id')->constrained()->onDelete('CASCADE');
+            $table->foreignId('medication_id')->constrained()->onDelete('CASCADE');
+            $table->date('ordered_date');
+            $table->date('delivery_date');
+            $table->string('ordered_description');
             $table->timestamps();
         });
     }
