@@ -16,6 +16,11 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             // $table->foreignId('')->constrained()->onDelete('CASCADE');
+            $table->string('name_patient');
+            $table->string('first_name_patient');
+            $table->integer('age_patient');
+            $table->integer('num_tel_patient');
+            $table->string('email_patient')->unique();
             $table->timestamps();
         });
     }
