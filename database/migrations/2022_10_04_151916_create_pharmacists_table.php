@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('pharmacists', function (Blueprint $table) {
             $table->id();
+            $table->string('name_pharmacist');
+            $table->string('first_name_pharmacist');
+            $table->integer('num_tel_pharmacist');
+            $table->string('email_pharmacist')->unique();
             $table->timestamps();
         });
     }
