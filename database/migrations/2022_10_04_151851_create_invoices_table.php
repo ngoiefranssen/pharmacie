@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('cashier_id')->constrained()->onDelete('CASCADE');
+            $table->string('description_invoice');
+            $table->integer('amount');
+            $table->date('date_invoice');
             $table->timestamps();
         });
     }
