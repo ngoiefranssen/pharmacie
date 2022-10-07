@@ -9,7 +9,7 @@
             <div class="px-4 py-5 bg-white sm:p-6">
               <div class="grid grid-cols-6 gap-6">
 
-                <h3 class="text-dark-600 "> Les informations de {{ $cashiers_show->name_cashier . " " . $cashiers_show->first_name_cashier }}</h3>
+                {{-- <h3 class="text-dark-600 "> Les informations de {{ $cashiers_show->name_cashier }}</h3> --}}
 
                 <div class="col-span-6 sm:col-span-3">
                    <p>Nom : {{$cashiers_show->name_cashier}}</p>
@@ -30,9 +30,7 @@
             </div>
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-              <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">
-                Save
-              </button>
+                <a href="{{route('cashiers.edit', $cashiers_show->id )}}" class="" type="submit"><i class="far fa-edit"></i>Editer les informations</a>
             </div>
           </div>
       </div>
