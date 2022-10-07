@@ -5,7 +5,7 @@
     <div class="bg-white md:shadow-lg shadow-none rounded p-6 w-96" >
         <h1 class="text-3xl text-center font-bold leading-normal" >Update Cashier</h1>
         <p class="text-sm leading-normal">Edit the information in front of you if you want to do so</p>
-        <div>
+        {{-- <div>
             @if ($errors->any())
             <div>
                 <ul>
@@ -15,7 +15,7 @@
                 </ul>
             </div>
             @endif
-        </div>
+        </div> --}}
         <form class="space-y-5 mt-5" action="{{ route('cashiers.update', $cashier_edit->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')

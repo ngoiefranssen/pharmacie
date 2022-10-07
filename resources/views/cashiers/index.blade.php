@@ -31,7 +31,7 @@
           <td class="w-1/3 text-left py-3 px-4">{{ $cashier->num_tel_cashier }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $cashier->email_cashier }}</td>
           <td class="w-1/3 text-left py-3 px-4">
-            <a href="{{route('cashiers.show', $cashier->id )}}"><i></i></a>
+            <a href="{{route('cashiers.show', $cashier->id )}}"><i class="fa-solid fa-eye"></i></a>
             <a href="{{route('cashiers.edit', $cashier->id )}}"><i class="far fa-edit"></i></a>
             <a href="{{route('delete_Cashier.delete', $cashier->id )}}"><i class=" fas fa-trash-alt"></i></a>
           </td>

@@ -6,7 +6,7 @@
         <p class="text-sm leading-center"></p>
       <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
 
-          @if ($errors->any())
+          {{-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -14,7 +14,7 @@
                     @endforeach
                 </ul>
             </div>
-          @endif
+          @endif --}}
         <form action="{{ route('cashiers.store') }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
             @method('post')

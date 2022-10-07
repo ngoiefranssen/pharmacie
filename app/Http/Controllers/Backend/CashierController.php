@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Carbon\Carbon;
 use App\Models\Cashier;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -93,17 +94,34 @@ class CashierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cashier $cashier)
+    public function update(Request $request, Cashier $cashier) //Cashier $cashier
     {
-        $request->validate([
+       $request->validate([
 
             'name_cashier' => 'required|max:50',
             'first_name_cashier' => 'required|max:50',
             'num_tel_cashier' => 'required|max:30',
             'email_cashier' => 'required|max:50',
+        ],
+        [
+            'name_cashier.required' => '',
+            'first_name_cashier.required' => '',
+            'num_tel_cashier.required' => '',
+            'email_cashier.required' => '',
         ]);
 
-        $cashier->updated($request->all());
+        $cashier->update($request->all());
+
+        // Cashier::find($id)->update([
+
+        //     'name_cashier' => $request->name_cashier,
+        //     'first_name_cashier' => $request->first_name_cashier,
+        //     'num_tel_cashier' => $request->num_tel_cashier,
+        //     'email_cashier' => $request->email_cahsier,
+        //     'create_at' => Carbon::now(),
+
+        // ]);
+
         return redirect()->route('cashiers.index')->with('message', 'Caissier mondifiée avec succès');
 
     }
