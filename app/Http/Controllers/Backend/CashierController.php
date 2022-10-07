@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Cashier;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CashierController extends Controller
 {
@@ -16,7 +16,9 @@ class CashierController extends Controller
     public function index()
     {
         //
-
+        $cashiers = Cashier::all();
+        
+        return view('cashiers.index', compact('cashiers'));
     }
 
     /**
@@ -26,7 +28,7 @@ class CashierController extends Controller
      */
     public function create()
     {
-        //
+        return view('cashiers.create');
     }
 
     /**
@@ -38,6 +40,11 @@ class CashierController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate([
+
+            // ''
+        ]);
     }
 
     /**

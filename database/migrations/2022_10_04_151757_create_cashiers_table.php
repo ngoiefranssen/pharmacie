@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_cashier');
             $table->string('first_name_cashier');
+            // $table->string('kind_cashier');
             $table->integer('num_tel_cashier');
             $table->string('email_cashier')->unique();
             $table->timestamps();

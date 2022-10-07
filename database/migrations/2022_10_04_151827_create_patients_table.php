@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name_patient');
             $table->string('first_name_patient');
             $table->integer('age_patient');
+            $table->string('kind_patient');
             $table->integer('num_tel_patient');
             $table->string('email_patient')->unique();
             $table->timestamps();
