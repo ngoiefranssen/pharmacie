@@ -13,27 +13,31 @@
         <tr>
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">#</th>
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">First name</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">First_name</th>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Numero_phone</td>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</td>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Actions</td>
         </tr>
       </thead>
     <tbody class="text-gray-700">
-      @if ($cashiers->cout())
-      @foreach ($cashiers as $cashier)
+
+      {{-- @if ( $cashiers->cout() ) --}}
+      @foreach ( $cashiers as $cashier)
+
          <tr class="bg-gray-100">
-          <td class="w-1/3 text-left py-3 px-4">{{}}</td>
-          <td class="w-1/3 text-left py-3 px-4"></td>
-          <td class="w-1/3 text-left py-3 px-4"></td>
-          <td class="w-1/3 text-left py-3 px-4"></td>
-          <td class="w-1/3 text-left py-3 px-4"></td>
-          <td class="w-1/3 text-left py-3 px-4"></td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->id }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->name_cashier }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->first_name_cashier }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->num_tel_cashier }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->email_cashier }}</td>
+          <td class="w-1/3 text-left py-3 px-4">
+            <a href="{{route('cashiers.show', $cashier->id )}}"><i></i></a>
+            <a href="{{route('cashiers.edit', $cashier->id )}}"><i class="far fa-edit"></i></a>
+            <a href="{{route('delete_Cashier.delete', $cashier->id )}}"><i class=" fas fa-trash-alt"></i></a>
+          </td>
         </tr>
       @endforeach
-        
-      @endif
-     
+      {{-- @endif --}}
     </tbody>
     </table>
   </div>

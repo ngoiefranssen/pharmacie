@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     use HasFactory;
+
+
+    protected $guarded = [];
+
+    public function cashier()
+    {
+        return $this->belongsTo(Cashier::class);
+    }
 }

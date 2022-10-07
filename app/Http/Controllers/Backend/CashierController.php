@@ -40,11 +40,25 @@ class CashierController extends Controller
     public function store(Request $request)
     {
         //
+       $valideted_cashier =  $request->validate([
 
-        $request->validate([
-
-            // ''
+            'name_cashier' => 'required|max:50',
+            'first_name_cashier' => 'required|max:50',
+            'num_tel_cashier' => 'required|max:30',
+            'email_cashier' => 'required|max:50',
+        ],
+        [
+            'name_cashier.required' => 'Veuillez compléter le champ nom svp !',
+            'first_name_cashier.required' => 'Veuillez compléter le champ prenom svp !',
+            'num_tel_cashier.required' => 'Veuillez réécrire le numéro svp !',
+            'email_cashier.required' => 'Email incorrect svp !', 
         ]);
+
+        // Cashier::create($request->all());
+
+        Cashier::create($valideted_cashier);
+
+        return redirect()->route('cashiers.index')->with('message', 'Cashiers created successfully');
     }
 
     /**
@@ -55,7 +69,8 @@ class CashierController extends Controller
      */
     public function show($id)
     {
-        //
+        $cashiers_show = Cashier::find($id);
+        return view('cashiers.show', compact('cashiers_show'));
     }
 
     /**
@@ -66,7 +81,9 @@ class CashierController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cashier_edit = Cashier::find($id);
+
+        return view('cashiers.edit', compact('cashier_edit'));
     }
 
     /**
@@ -76,9 +93,19 @@ class CashierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cashier $cashier)
     {
-        //
+        $request->validate([
+
+            'name_cashier' => 'required|max:50',
+            'first_name_cashier' => 'required|max:50',
+            'num_tel_cashier' => 'required|max:30',
+            'email_cashier' => 'required|max:50',
+        ]);
+
+        $cashier->updated($request->all());
+        return redirect()->route('cashiers.index')->with('message', 'Caissier mondifiée avec succès');
+
     }
 
     /**
@@ -87,8 +114,21 @@ class CashierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    // public function destroy($id)
+    // {
+    //     $cashier_delete = Cashier::find($id);
+
+    //     $cashier_delete->delete();
+
+    //     return back()->with('message', 'Le caissier a ete supprimer avec succès');
+    // }
+
+    public function delete_Cashier($id)
     {
-        //
+        $cashier_delete = Cashier::find($id);
+
+        $cashier_delete->delete();
+
+        return back()->with('message', 'Le caissier a ete supprimer avec succès');
     }
 }

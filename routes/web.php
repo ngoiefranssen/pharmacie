@@ -21,6 +21,8 @@ Route::get('/', function () {
 Route::get('/home', function () { return view('home.main'); });
 
 Route::resource('cashiers', CashierController::class);
+Route::get('/delete_Cashier/{id}', [CashierController::class, 'delete_Cashier'])->name('delete_Cashier.delete');
+
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'
 ])->group(function () {
