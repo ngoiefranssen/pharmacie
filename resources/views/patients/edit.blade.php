@@ -5,7 +5,7 @@
     <div class="md:grid md:grid-cols-0 md:gap-6">
         <p class="text-sm leading-center"></p>
       <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
-        <form action="{{ route('patients.store') }}" method="POST" class="" enctype="multipart/form-data">
+        <form action="{{ route('patients.update', $patient_edit->id ) }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
             @method('post')
 
@@ -17,28 +17,28 @@
                     @error('name_patient')
                          <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                  <input type="text" name="name_patient" id="name_patient" placeholder="Entrer le nom........." autocomplete="name_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="name_patient" id="name_patient" placeholder="Entrer le nom........." value="{{$patient_edit->name_patient }}" autocomplete="name_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                     @error('first_name_patient')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                  <input type="text" name="first_name_patient" id="first_name_patient" placeholder="Enter first name...." autocomplete="first_name_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="first_name_patient" id="first_name_patient" placeholder="Enter first name...." value="{{$patient_edit->first_name_patient }}" autocomplete="first_name_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                     @error('age_patient')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="number" name="age_patient" id="age_patient" placeholder="Enter num phone...." autocomplete="age_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="number" name="age_patient" id="age_patient" placeholder="Enter num phone...." value="{{$patient_edit->age_patient }}" autocomplete="age_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                     @error('kind_patient')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                  <select id="kind_patient" name="kind_patient" autocomplete="kind_patient" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <select id="kind_patient" name="kind_patient" value="{{$patient_edit->kind_patient }}" autocomplete="kind_patient" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option>choose the gender</option>
                     <option value="F">F</option>
                     <option value="M">M</option>

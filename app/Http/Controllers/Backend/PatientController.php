@@ -132,9 +132,10 @@ class PatientController extends Controller
         //
     }
 
-    public function delete_patient(Patient $patient)
+    public function delete_patient($id)
     {
-        $patient->delete();
+        $patient_delete = Patient::find($id);
+        $patient_delete->delete();
 
         return back()->with('message', 'Le(La) patient(e) a ete supprimer avec succès');
     }
