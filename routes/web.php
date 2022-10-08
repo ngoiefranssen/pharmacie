@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\CashierController;
+use App\Http\Controllers\Backend\InvoiceController;
 use App\Http\Controllers\Backend\PatientController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +34,6 @@ Route::get('/delete_Cashier/{id}', [CashierController::class, 'delete_Cashier'])
 
 Route::resource('patients', PatientController::class);
 Route::get('/delete_patient/{id}', [PatientController::class, 'delete_patient'])->name('delete_patient.delete');
+
+Route::resource('invoices', InvoiceController::class);
+Route::get('/delete_invoice/{id}', [InvoiceController::class, 'delete_invoice'])->name('delete_invoices.delete.delete');

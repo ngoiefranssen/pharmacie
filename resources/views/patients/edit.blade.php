@@ -7,7 +7,7 @@
       <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
         <form action="{{ route('patients.update', $patient_edit->id ) }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
-            @method('post')
+            @method('PUT')
 
           <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
@@ -38,8 +38,8 @@
                     @error('kind_patient')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                  <select id="kind_patient" name="kind_patient" value="{{$patient_edit->kind_patient }}" autocomplete="kind_patient" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option>choose the gender</option>
+                  <select id="kind_patient" name="kind_patient" autocomplete="kind_patient" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="">{{ $patient_edit->kind_patient }}</option>
                     <option value="F">F</option>
                     <option value="M">M</option>
                   </select>
@@ -50,14 +50,14 @@
                     @error('num_tel_patient')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="number" name="num_tel_patient" id="num_tel_patient" placeholder="Enter num phone...." autocomplete="num_tel_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="number" name="num_tel_patient" id="num_tel_patient" placeholder="Enter num phone...." value="{{$patient_edit->num_tel_patient }}" autocomplete="num_tel_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                     @error('email_patient')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="text" name="email_patient" id="email_patient" placeholder="Enter email...." autocomplete="email_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="text" name="email_patient" id="email_patient" placeholder="Enter email...." value="{{$patient_edit->email_patient }}" autocomplete="email_patient" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
             </div>
             </div>

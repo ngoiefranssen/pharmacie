@@ -61,7 +61,7 @@ class PatientController extends Controller
 
         Patient::create($request->all());
 
-        return redirect()->route('patients.index')->with('message', 'le (la) patient(e) ete enregistrait avec succès');
+        return redirect()->route('patients.index')->with('message', 'le (la) patient(e) a ete enregistrait avec succès');
     }
 
     /**
