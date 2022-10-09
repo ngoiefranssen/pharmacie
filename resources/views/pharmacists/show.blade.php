@@ -24,7 +24,7 @@
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
-                    <p>Email : {{ $pharmacist_show->email_cashier }}</p>
+                    <p>Email : {{ $pharmacist_show->email_pharmacist }}</p>
                  </div>
 
             </div>
