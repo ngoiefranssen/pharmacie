@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pharmacist;
 use Illuminate\Http\Request;
 
 class PharmacistController extends Controller
@@ -14,7 +15,9 @@ class PharmacistController extends Controller
      */
     public function index()
     {
-        //
+        $pharmacists = Pharmacist::all();
+        
+        return view('pharmacists.index', compact('pharmacists'));
     }
 
     /**
@@ -24,7 +27,7 @@ class PharmacistController extends Controller
      */
     public function create()
     {
-        //
+        return view('pharmacists.create');
     }
 
     /**
@@ -35,7 +38,9 @@ class PharmacistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+
+        // ]);
     }
 
     /**
