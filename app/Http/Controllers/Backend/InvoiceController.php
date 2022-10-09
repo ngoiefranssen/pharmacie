@@ -7,6 +7,7 @@ use App\Models\Cashier;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Symfony\Component\Finder\Finder;
 
 class InvoiceController extends Controller
 {
@@ -53,14 +54,15 @@ class InvoiceController extends Controller
             'cashier_id' => 'required',
             'description_invoice' => 'required|max:255' ,
             'amount' => 'required|max:50',
-            'new_date_invoicess' => 'required',
+            'new_date_invoice' => 'required|date|after:tomorrow',
 
         ],
         [
             'cashier_id.required' => 'Choississez le caissier svp !',
             'description_invoice.required' => 'Veuillez compléter le champ svp ! Max 255 caractères' ,
             'amount.required' => 'Veuillez compléter le champ svp ! Max 50 caractères',
-            'new_date_invoice.required' => '',
+            'new_date_invoice.required' => 'la date svp',
+
         ]);
 
         Invoice::create($request->all());
@@ -77,7 +79,10 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $invoice = Invoice::find($id);
+        $cashier = Cashier::all();
+
+        return view('invoices.show', compact('invoice', 'cashier'));
     }
 
     /**
@@ -103,7 +108,28 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $date_invoice = date('Y-m-d H:i:s');
+        $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
+                                    ->format('m/d/Y');
+
+        $request->validate([
+
+            'cashier_id' => 'required',
+            'description_invoice' => 'required|max:255',
+            'amount' => 'required|max:50',
+            'new_date_invoice' => 'required|date|after:tomorrow',
+
+        ],
+        [
+            'cashier_id.required' => 'Choississez le caissier svp !',
+            'description_invoice.required' => 'Veuillez compléter le champ svp ! Max 255 caractères' ,
+            'amount.required' => 'Veuillez compléter le champ svp ! Max 50 caractères',
+            'new_date_invoice.required' => '',
+        ]);
+
+        Invoice::create($request->all());
+
+        return redirect()->route('invoices.index')->with('messagae', ' La facture a ete enregistre avec succès');
     }
 
     /**
@@ -119,6 +145,10 @@ class InvoiceController extends Controller
 
     public function delete_invoice($id)
     {
+        $delete = Invoice::find($id);
 
+        $delete->delete();
+
+        return back()->with('message', 'La facture a ete supprimer avec succès');
     }
 }

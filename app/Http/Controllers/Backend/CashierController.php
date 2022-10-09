@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Cashier;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CashierController extends Controller
 {
@@ -19,7 +20,9 @@ class CashierController extends Controller
         //
         $cashiers = Cashier::all();
         
-        return view('cashiers.index', compact('cashiers'));
+        return view('cashiers.index', compact('cashiers'), [
+            'cashiers' => DB::table('cashiers')->paginate(5)
+        ]);
     }
 
     /**
