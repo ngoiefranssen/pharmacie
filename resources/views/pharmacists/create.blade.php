@@ -1,6 +1,13 @@
 @extends('layouts.home')
 @section('content')
 
+
+{{-- @if ($message = Session::get('message'))
+  <div class="alert alert-success">
+      <p class="text-blue-600 text-center">{{ $message }}</p>
+  </div>
+@endif --}}
+
 <div class="mt-10 sm:mt-0">
     <div class="md:grid md:grid-cols-0 md:gap-6">
         <p class="text-sm leading-center"></p>
@@ -28,17 +35,17 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    @error('num_tel_cashier')
+                    @error('num_tel_pharmacist')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="number" name="num_tel_cashier" id="num_tel_cashier" placeholder="Enter num phone...." autocomplete="num_tel_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="number" name="num_tel_pharmacist" id="num_tel_pharmacist" placeholder="Enter num phone...." autocomplete="num_tel_pharmacist" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    @error('email_cashier')
+                    @error('email_pharmacist')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="text" name="email_cashier" id="email_cashier" placeholder="Enter email...." autocomplete="email_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="text" name="email_pharmacist" id="email_pharmacist" placeholder="Enter email...." autocomplete="email_pharmacist" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
             </div>

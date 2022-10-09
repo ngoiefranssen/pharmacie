@@ -65,7 +65,9 @@ class PharmacistController extends Controller
      */
     public function show($id)
     {
-        //
+        $pharmacist_show = Pharmacist::find($id);
+
+        return view('pharmacists.show', compact('pharmacist_show'));
     }
 
     /**
@@ -76,7 +78,9 @@ class PharmacistController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pharmacist_edit = Pharmacist::find($id);
+
+        return view('pharmacists.edit', compact('pharmacist_edit'));
     }
 
     /**
@@ -86,9 +90,19 @@ class PharmacistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pharmacist $pharmacist)
     {
-        //
+        $request->validate([
+
+            'name_pharmacist' => 'required|max:50',
+            'first_name_pharmacist' => 'required|max:50',
+            'num_tel_pharmacist' => 'required|max:30',
+            'email_pharmacist' => 'required|email|unique:users,email|max:50'
+        ]);
+
+        $pharmacist->update($request->all());
+
+        return redirect()->route('pharmacists.index')->with('message', 'pharmacist mondifiée avec succès');
     }
 
     /**
@@ -104,6 +118,9 @@ class PharmacistController extends Controller
 
     public function delete_pharmacist($id)
     {
+        $delete_pharmcist = Pharmacist::find($id);
+        $delete_pharmcist->delete();
 
+        return back()->with('message', 'Le caissier a ete supprimer avec succès');
     }
 }

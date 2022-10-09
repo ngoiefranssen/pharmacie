@@ -6,11 +6,15 @@
     <a href="{{ route('pharmacists.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_pharmacist</a>
 </div>
 
-@if ($message = Session::get('message'))
-  <div class="alert alert-success">
-      <p class="text-blue-600">{{ $message }}</p>
-  </div>
-@endif
+      @if ($message = Session::get('message'))
+        <div class="md:px-64 py-1 w-full">
+          <div class="shadow overflow-hidden rounded border-b border-gray-200">
+            <div class="alert alert-success">
+                <p class="text-blue-600 text-center">{{ $message }}</p>
+            </div>
+          </div>
+        </div>
+      @endif
 
 <div class="md:px-32 py-1 w-full">
   <div class="shadow overflow-hidden rounded border-b border-gray-200">
@@ -37,8 +41,8 @@
           <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->num_tel_pharmacist }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->email_pharmacist }}</td>
           <td class="w-1/3 text-left py-3 px-4">
-            <a href="{{route('pharmacist.show', $pharmacist->id )}}"><i class="fa-solid fa-eye"></i></a>
-            <a href="{{route('pharmacist.edit', $pharmacist->id )}}"><i class="far fa-edit"></i></a>
+            <a href="{{route('pharmacists.show', $pharmacist->id )}}"><i class="fa-solid fa-eye"></i></a>
+            <a href="{{route('pharmacists.edit', $pharmacist->id )}}"><i class="far fa-edit"></i></a>
             <a href="{{route('delete_pharmacist.delete', $pharmacist->id )}}"><i class=" fas fa-trash-alt"></i></a>
           </td>
         </tr>
