@@ -48,7 +48,7 @@ class PatientController extends Controller
             'age_patient' => 'required|max:10',
             'kind_patient' => 'required|max:10',
             'num_tel_patient' => 'required|max:30',
-            'email_patient' => 'required|max:50',
+            'email_patient' => 'required|email|unique:users,email|max:50',
         ],
         [
             'name_patient.required' => 'Veuillez compléter le champ svp ! Max 50 caractères',

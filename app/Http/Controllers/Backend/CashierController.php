@@ -49,7 +49,7 @@ class CashierController extends Controller
             'name_cashier' => 'required|max:50',
             'first_name_cashier' => 'required|max:50',
             'num_tel_cashier' => 'required|max:30',
-            'email_cashier' => 'required|max:50',
+            'email_cashier' => 'required|email|unique:users,email|max:50',
         ],
         [
             'name_cashier.required' => 'Veuillez compléter le champ nom svp !',

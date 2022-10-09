@@ -38,9 +38,23 @@ class PharmacistController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
+        $request->validate([
 
-        // ]);
+            'name_pharmacist' => 'required|max:50',
+            'first_name_pharmacist' => 'required|max:50',
+            'num_tel_pharmacist' => 'required|max:30',
+            'email_pharmacist' => 'required|email|unique:users,email|max:50'
+        ],
+        [
+            'name_pharmacist.required' => 'Veuillez compléter le champ nom svp ! et le max des caracteres est de 50',
+            'first_name_pharmacist.required' => 'Veuillez compléter le champ prenom svp ! et le max des caracteres est de 50',
+            'num_tel_pharmacist.required' => 'Veuillez compléter le champ numero svp ! et le max est de 30',
+            'email_pharmacist.required' => 'Veuillez compléter le champ email svp ! et le max des caracteres est de 50',
+        ]);
+
+        Pharmacist::create($request->all());
+
+        return redirect()->route('pharmacists.index')->with('message', 'Pharmacist created successfully');
     }
 
     /**
@@ -86,5 +100,10 @@ class PharmacistController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete_pharmacist($id)
+    {
+
     }
 }

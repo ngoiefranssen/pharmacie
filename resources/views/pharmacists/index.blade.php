@@ -32,14 +32,14 @@
 
          <tr class="bg-gray-100">
           <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->id }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->name_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->first_name_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->num_tel_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->email_cashier }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->name_pharmacist }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->first_name_pharmacist }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->num_tel_pharmacist }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $pharmacist->email_pharmacist }}</td>
           <td class="w-1/3 text-left py-3 px-4">
-            <a href="{{route('cashiers.show', $cashier->id )}}"><i class="fa-solid fa-eye"></i></a>
-            <a href="{{route('cashiers.edit', $cashier->id )}}"><i class="far fa-edit"></i></a>
-            <a href="{{route('delete_Cashier.delete', $cashier->id )}}"><i class=" fas fa-trash-alt"></i></a>
+            <a href="{{route('pharmacist.show', $pharmacist->id )}}"><i class="fa-solid fa-eye"></i></a>
+            <a href="{{route('pharmacist.edit', $pharmacist->id )}}"><i class="far fa-edit"></i></a>
+            <a href="{{route('delete_pharmacist.delete', $pharmacist->id )}}"><i class=" fas fa-trash-alt"></i></a>
           </td>
         </tr>
       @endforeach
