@@ -26,7 +26,7 @@
                     @error('cashier_id')
                          <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category_id" id="category_id">
+                    <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="cashier_id" id="cashier_id">
                         @foreach($cashiers as $cashier)
                             <option value="{{ $cashier->id }}">{{ $cashier->name_cashier }}</option>
                         @endforeach

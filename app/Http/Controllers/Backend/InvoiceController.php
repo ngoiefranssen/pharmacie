@@ -44,9 +44,9 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
 
-        $date_invoice = date('Y-m-d H:i:s');
-        $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
-                                    ->format('m/d/Y');
+        // $date_invoice = date('Y-m-d H:i:s');
+        // $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
+        //                             ->format('m/d/Y');
 
 
         $request->validate([
@@ -54,20 +54,33 @@ class InvoiceController extends Controller
             'cashier_id' => 'required',
             'description_invoice' => 'required|max:255' ,
             'amount' => 'required|max:50',
-            'new_date_invoice' => 'required|date|after:tomorrow',
+            'date_invoice' => 'required|date', //|after:tomorrow
 
         ],
         [
             'cashier_id.required' => 'Choississez le caissier svp !',
             'description_invoice.required' => 'Veuillez compléter le champ svp ! Max 255 caractères' ,
             'amount.required' => 'Veuillez compléter le champ svp ! Max 50 caractères',
-            'new_date_invoice.required' => 'la date svp',
+            'date_invoice.required' => 'la date svp',
 
         ]);
 
-        Invoice::create($request->all());
+        
+            if(Invoice::create($request->validate())){
 
-        return redirect()->route('invoices.index')->with('message', ' La facture a ete enregistrait avec succès');
+
+                
+              return redirect()
+                ->route('invoices.index')
+                ->withStatus('Invoice successfully registered.');
+            }
+    
+            return redirect()
+                ->route('invoices.index');
+
+        // Invoice::create($validete_inoivece);
+
+        // return redirect()->route('invoices.index')->with('message', ' La facture a ete enregistrait avec succès');
 
     }
 

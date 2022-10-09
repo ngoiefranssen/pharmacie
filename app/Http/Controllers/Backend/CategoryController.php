@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Pharmacist;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::get();
+
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +28,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $pharmacists = Pharmacist::all();
+        return view('categories.create', compact('pharmacists'));
     }
 
     /**
@@ -81,5 +86,10 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete_category($id)
+    {
+
     }
 }
