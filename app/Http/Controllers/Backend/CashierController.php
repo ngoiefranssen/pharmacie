@@ -55,7 +55,7 @@ class CashierController extends Controller
             'name_cashier.required' => 'Veuillez compléter le champ nom svp !',
             'first_name_cashier.required' => 'Veuillez compléter le champ prenom svp !',
             'num_tel_cashier.required' => 'Veuillez réécrire le numéro svp !',
-            'email_cashier.required' => 'Email incorrect svp !', 
+            'email_cashier.required' => 'Email incorrect !', 
         ]);
 
         // Cashier::create($request->all());

@@ -7,6 +7,7 @@ use App\Models\Cashier;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Validated;
 use Symfony\Component\Finder\Finder;
 
 class InvoiceController extends Controller
@@ -46,10 +47,10 @@ class InvoiceController extends Controller
 
         // $date_invoice = date('Y-m-d H:i:s');
         // $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
-        //                             ->format('m/d/Y');
+        //                            ->format('m/d/Y');
 
 
-        $request->validate([
+        $Validated_invoice = $request->validate([
 
             'cashier_id' => 'required',
             'description_invoice' => 'required|max:255' ,
@@ -66,21 +67,19 @@ class InvoiceController extends Controller
         ]);
 
         
-            if(Invoice::create($request->validate())){
-
-
-                
-              return redirect()
-                ->route('invoices.index')
-                ->withStatus('Invoice successfully registered.');
-            }
+            // if(Invoice::create($request->validate())){
+ 
+            //   return redirect()
+            //     ->route('invoices.index')
+            //     ->withStatus('Invoice successfully registered.');
+            // }
     
-            return redirect()
-                ->route('invoices.index');
+            // return redirect()
+            //     ->route('invoices.index')->with('message', 'Successfully');
 
-        // Invoice::create($validete_inoivece);
+        Invoice::create($Validated_invoice);
 
-        // return redirect()->route('invoices.index')->with('message', ' La facture a ete enregistrait avec succès');
+        return redirect()->route('invoices.index')->with('message', ' La facture a ete enregistrait avec succès');
 
     }
 
