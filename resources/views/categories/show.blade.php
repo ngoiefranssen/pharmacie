@@ -16,11 +16,11 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    <p>Prenom : {{ $category_show->name_category }}</p>
+                    <p>Nom_categorie : {{ $category_show->name_category }}</p>
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
-                    <p>Num_phone : {{ $category_show->description_category }}</p>
+                    <p>Description_categorie : {{ $category_show->description_category }}</p>
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
