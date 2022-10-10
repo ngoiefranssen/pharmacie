@@ -47,8 +47,8 @@ class CategoryController extends Controller
         ],
         [
             'pharmacist_id.required' => 'Choississez le pharmacist correspondate svp !',
-            'name_category.required' => '',
-            'description_category.required' => '',            
+            'name_category.required' => 'Veuillez compléter le champ nom categorie svp ! max 30 caracteres',
+            'description_category.required' => 'Veuillez compléter le champ descripton svp ! ',            
         ]);
 
         Category::create($request->all());

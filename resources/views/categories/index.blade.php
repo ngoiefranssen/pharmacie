@@ -7,8 +7,12 @@
 </div>
 
 @if ($message = Session::get('message'))
-  <div class="alert alert-success">
-      <p class="text-blue-600">{{ $message }}</p>
+  <div class="md:px-64 py-1 w-full">
+    <div class="shadow overflow-hidden rounded border-b border-gray-200">
+      <div class="alert alert-success">
+          <p class="text-blue-600 text-center">{{ $message }}</p>
+      </div>
+    </div>
   </div>
 @endif
 
