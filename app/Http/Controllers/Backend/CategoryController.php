@@ -50,6 +50,10 @@ class CategoryController extends Controller
             'name_category.required' => '',
             'description_category.required' => '',            
         ]);
+
+        Category::create($request->all());
+
+        return redirect()->route('categories.index')->with('message', 'Category created successfully');
     }
 
     /**
