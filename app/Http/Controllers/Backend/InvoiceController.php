@@ -45,9 +45,9 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
 
-        // $date_invoice = date('Y-m-d H:i:s');
-        // $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
-        //                            ->format('m/d/Y');
+        $date_invoice = date('Y-m-d H:i:s');
+        $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
+                                   ->format('m/d/Y');
 
 
         $Validated_invoice = $request->validate([
@@ -66,16 +66,13 @@ class InvoiceController extends Controller
 
         ]);
 
-        
-            // if(Invoice::create($request->validate())){
+        // if(Invoice::create($request->validate())){
  
-            //   return redirect()
-            //     ->route('invoices.index')
-            //     ->withStatus('Invoice successfully registered.');
-            // }
+        //     return redirect()->route('invoices.index')
+        //         ->withStatus('Invoice successfully registered.');
+        //     }
     
-            // return redirect()
-            //     ->route('invoices.index')->with('message', 'Successfully');
+        // return redirect()->route('invoices.index')->with('message', 'Successfully');
 
         Invoice::create($Validated_invoice);
 
