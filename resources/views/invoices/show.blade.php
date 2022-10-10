@@ -20,7 +20,7 @@
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
-                    <p>Num_phone : {{ $invoice_edit->num_tel_cashier }}</p>
+                    <p>Num_phone : {{ $invoice_edit->amount }}</p>
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
