@@ -43,5 +43,5 @@ Route::get('/delete_invoice/{id}', [InvoiceController::class, 'delete_invoice'])
 Route::resource('pharmacists', PharmacistController::class);
 Route::get('/delete_pharmacist/{id}', [PharmacistController::class, 'delete_pharmacist'])->name('delete_pharmacist.delete');
 
-Route::resource('categorie', CategoryController::class);
+Route::resource('categories', CategoryController::class);
 Route::get('/delete_category/{id}', [CategoryController::class, 'delete_category'])->name('delete_category.delete');
