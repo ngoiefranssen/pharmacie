@@ -30,15 +30,14 @@
       @foreach ( $categories as $category)
 
          <tr class="bg-gray-100">
-          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->id }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->name_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->first_name_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->num_tel_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $cashier->email_cashier }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $category->id }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $category->pharmacist->name_pharmacist }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $category->name_category }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $category->description_category }}</td>
           <td class="w-1/3 text-left py-3 px-4">
-            <a href="{{route('categories.show', $cashier->id )}}"><i class="fa-solid fa-eye"></i></a>
-            <a href="{{route('categories.edit', $cashier->id )}}"><i class="far fa-edit"></i></a>
-            <a href="{{route('delete_category.delete', $cashier->id )}}"><i class=" fas fa-trash-alt"></i></a>
+            <a href="{{route('categories.show', $category->id )}}"><i class="fa-solid fa-eye"></i></a>
+            <a href="{{route('categories.edit', $category->id )}}"><i class="far fa-edit"></i></a>
+            <a href="{{route('delete_category.delete', $category->id )}}"><i class=" fas fa-trash-alt"></i></a>
           </td>
         </tr>
       @endforeach
