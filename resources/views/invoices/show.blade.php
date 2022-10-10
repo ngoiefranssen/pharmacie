@@ -7,10 +7,12 @@
       <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
           <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
+
+                <div class="col-span-6 sm:col-span-3 my-5">
+                    <h3 class="text-dark-600 "> Les informations du Facture</h3>
+                </div>
+
               <div class="grid grid-cols-6 gap-6">
-
-                <h3 class="text-dark-600 "> Les informations du Facture</h3>
-
                 <div class="col-span-6 sm:col-span-3">
                    <p>Nom_caissier : {{ $invoice->cashier->name_cashier }}</p>
                 </div>
