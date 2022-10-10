@@ -94,6 +94,9 @@ class CategoryController extends Controller
     {
         $request->validate([
 
+            'pharmacist_id' => 'required',
+            'name_category' => 'required|max:30',
+            'description_category' => 'required|max:255',
         ]);
     }
 
