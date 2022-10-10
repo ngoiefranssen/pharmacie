@@ -12,7 +12,7 @@
                 {{-- <h3 class="text-dark-600 "> Les informations de {{ $cashiers_show->name_cashier }}</h3> --}}
 
                 <div class="col-span-6 sm:col-span-3">
-                   <p>Nom_caissier : {{ $invoice_edit->name_cashier }}</p>
+                   <p>Nom_caissier : {{ $invoice_edit->cashier->name_cashier }}</p>
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
