@@ -22,15 +22,10 @@
                  <div class="col-span-6 sm:col-span-3">
                     <p>Description_categorie : {{ $category_show->description_category }}</p>
                  </div>
-
-                 <div class="col-span-6 sm:col-span-3">
-                    <p>Email : {{$cashiers_show->email_cashier}}</p>
-                 </div>
-
             </div>
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                <a href="{{route('cashiers.edit', $cashiers_show->id )}}" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">Editer les informations</a>
+                <a href="{{route('categories.edit', $category_show->id )}}" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">Editer les informations</a>
             </div>
           </div>
       </div>
