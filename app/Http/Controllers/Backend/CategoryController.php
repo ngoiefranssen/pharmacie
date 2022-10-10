@@ -40,7 +40,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'pharmacist_id' => 'required',
+            'name_category' => 'required|max:30',
+            'description_category' => 'required|max:255',
+        ]);
     }
 
     /**
