@@ -43,15 +43,15 @@
 
                {{-- description --}}
 
-               <div class="col-span-6 sm:col-span-3">
-                @error('description_category')
-                    <div class="text-blue-600">{{ $message }}</div>
-                @enderror
-                <div class="mb-4 xl:w-100">
-                    <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
-                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_category" name="description_category" rows="3" placeholder="Your description...."></textarea>
+               <div class="col-span-12 sm:col-span-6">
+                    @error('description_category')
+                        <div class="text-blue-600">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-4 xl:w-100">
+                        <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_category" name="description_category" rows="3" placeholder="Your description...."></textarea>
+                    </div>
                 </div>
-            </div>
 
             </div>
             </div>
