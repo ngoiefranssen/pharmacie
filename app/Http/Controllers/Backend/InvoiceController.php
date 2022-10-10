@@ -89,10 +89,10 @@ class InvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Cashier $cashier)
     {
         $invoice = Invoice::find($id);
-        $cashier = Cashier::all();
+        // $cashier = Cashier::all();
 
         return view('invoices.show', compact('invoice', 'cashier'));
     }
@@ -103,12 +103,12 @@ class InvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, Cashier $cashier)
+    public function edit($id)
     {
         $invoice_edit = Invoice::find($id);
-        // $cashiers = Cashier::get();
+        $cashiers = Cashier::get();
 
-        return view('invoices.edit', compact('invoice_edit', 'cashier'));
+        return view('invoices.edit', compact('invoice_edit', 'cashiers'));
     }
 
     /**
