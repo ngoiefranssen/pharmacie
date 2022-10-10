@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    <p>Prenom : {{ $invoice_edit->first_name_cashier }}</p>
+                    <p>Prenom : {{ $invoice_edit->description_invoice }}</p>
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
