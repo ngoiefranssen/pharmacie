@@ -16,15 +16,15 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    <p>Prenom : {{ $invoice_edit->description_invoice }}</p>
+                    <p>Description : {{ $invoice_edit->description_invoice }}</p>
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
-                    <p>Num_phone : {{ $invoice_edit->amount }}</p>
+                    <p>Montant : {{ $invoice_edit->amount }}</p>
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
-                    <p>Email : {{ $invoice_edit->date_invoice }}</p>
+                    <p>Date : {{ $invoice_edit->date_invoice }}</p>
                  </div>
 
             </div>
