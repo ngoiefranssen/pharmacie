@@ -46,7 +46,9 @@ class CategoryController extends Controller
             'description_category' => 'required|max:255',
         ],
         [
-            
+            'pharmacist_id.required' => 'Choississez le pharmacist correspondate svp !',
+            'name_category.required' => '',
+            'description_category.required' => '',            
         ]);
     }
 
