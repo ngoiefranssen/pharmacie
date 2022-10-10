@@ -9,13 +9,13 @@ class Invoice extends Model
 {
     use HasFactory;
 
-
+    // protected $guarded = [];
     protected $fillable = [
 
         'cashier_id',
         'description_invoice',
         'amount',
-        'new_date_invoice',
+        'date_invoice',
     ];
 
     public function cashier()

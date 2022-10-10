@@ -8,6 +8,7 @@ use App\Models\Invoice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Validated;
+use Spatie\FlareClient\FlareMiddleware\AddSolutions;
 use Symfony\Component\Finder\Finder;
 
 class InvoiceController extends Controller
@@ -45,11 +46,11 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
 
-        $date_invoice = date('Y-m-d H:i:s');
-        $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
-                                   ->format('m/d/Y');
+        // $date_invoice = date('Y-m-d H:i:s');
+        // $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
+        //                            ->format('m/d/Y');
 
-
+        
         $Validated_invoice = $request->validate([
 
             'cashier_id' => 'required',
@@ -65,6 +66,8 @@ class InvoiceController extends Controller
             'date_invoice.required' => 'la date svp',
 
         ]);
+
+        // add($Validated_invoice);
 
         // if(Invoice::create($request->validate())){
  
@@ -100,12 +103,12 @@ class InvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Cashier $cashier)
     {
         $invoice_edit = Invoice::find($id);
-        $cashiers = Cashier::get();
+        // $cashiers = Cashier::get();
 
-        return view('invoices.edit', compact('invoice_edit', 'cashiers'));
+        return view('invoices.edit', compact('invoice_edit', 'cashier'));
     }
 
     /**
@@ -115,28 +118,28 @@ class InvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Invoice $invoice)
     {
-        $date_invoice = date('Y-m-d H:i:s');
-        $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
-                                    ->format('m/d/Y');
+        // $date_invoice = date('Y-m-d H:i:s');
+        // $new_date_invoice = Carbon::createFromFormat('Y-m-d H:i:s', $date_invoice)
+        //                             ->format('m/d/Y');
 
         $request->validate([
 
             'cashier_id' => 'required',
             'description_invoice' => 'required|max:255',
             'amount' => 'required|max:50',
-            'new_date_invoice' => 'required|date|after:tomorrow',
+            'date_invoice' => 'required|date', // |after:tomorrow
 
         ],
         [
             'cashier_id.required' => 'Choississez le caissier svp !',
             'description_invoice.required' => 'Veuillez compléter le champ svp ! Max 255 caractères' ,
             'amount.required' => 'Veuillez compléter le champ svp ! Max 50 caractères',
-            'new_date_invoice.required' => '',
+            'date_invoice.required' => 'The date invoice must be a date after tomorrow.',
         ]);
 
-        Invoice::create($request->all());
+        $invoice->update($request->all());
 
         return redirect()->route('invoices.index')->with('messagae', ' La facture a ete enregistre avec succès');
     }

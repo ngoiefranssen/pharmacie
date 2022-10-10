@@ -38,7 +38,7 @@ Route::resource('patients', PatientController::class);
 Route::get('/delete_patient/{id}', [PatientController::class, 'delete_patient'])->name('delete_patient.delete');
 
 Route::resource('invoices', InvoiceController::class);
-Route::get('/delete_invoice/{id}', [InvoiceController::class, 'delete_invoice'])->name('delete_invoices.delete.delete');
+Route::get('/delete_invoice/{id}', [InvoiceController::class, 'delete_invoice'])->name('delete_invoice.delete');
 
 Route::resource('pharmacists', PharmacistController::class);
 Route::get('/delete_pharmacist/{id}', [PharmacistController::class, 'delete_pharmacist'])->name('delete_pharmacist.delete');

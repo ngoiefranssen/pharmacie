@@ -7,8 +7,12 @@
 </div>
 
 @if ($message = Session::get('message'))
-  <div class="alert alert-success">
-      <p class="text-blue-600">{{ $message }}</p>
+  <div class="md:px-64 py-1 w-full">
+    <div class="shadow overflow-hidden rounded border-b border-gray-200">
+      <div class="alert alert-success">
+          <p class="text-blue-600 text-center">{{ $message }}</p>
+      </div>
+    </div>
   </div>
 @endif
 
@@ -33,9 +37,9 @@
          <tr class="bg-gray-100">
           <td class="w-1/3 text-left py-3 px-4">{{ $invoice->id }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $invoice->cashier->name_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $invoice->first_name_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $invoice->num_tel_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $invoice->email_cashier }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $invoice->description_invoice }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $invoice->amount }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $invoice->date_invoice }}</td>
           <td class="w-1/3 text-left py-3 px-4">
             <a href="{{route('invoices.show', $invoice->id )}}"><i class="fa-solid fa-eye"></i></a>
             <a href="{{route('invoices.edit', $invoice->id )}}"><i class="far fa-edit"></i></a>
