@@ -24,7 +24,7 @@
                  </div>
 
                  <div class="col-span-6 sm:col-span-3">
-                    <p>Email : {{ $invoice_edit->email_cashier }}</p>
+                    <p>Email : {{ $invoice_edit->date_invoice }}</p>
                  </div>
 
             </div>
