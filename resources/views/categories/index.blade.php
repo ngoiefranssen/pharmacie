@@ -3,7 +3,7 @@
 
 
 <div class="my-5 ml-12 flex justify-left ">
-    <a href="{{ route('cashiers.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_Cashier</a>
+    <a href="{{ route('categories.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_Categorie</a>
 </div>
 
 @if ($message = Session::get('message'))
@@ -25,8 +25,6 @@
         </tr>
       </thead>
     <tbody class="text-gray-700">
-
-      {{-- @if ( $cashiers->cout() ) --}}
       @foreach ( $categories as $category)
 
          <tr class="bg-gray-100">
@@ -41,7 +39,6 @@
           </td>
         </tr>
       @endforeach
-      {{-- @endif --}}
     </tbody>
     </table>
   </div>
