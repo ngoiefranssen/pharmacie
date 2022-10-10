@@ -77,7 +77,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        $pharmacist_all = Pharmacist::all();
+
+        return view('categories.index', compact('category', 'pharmacist_all'));
     }
 
     /**
@@ -89,7 +92,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+
+        ]);
     }
 
     /**
