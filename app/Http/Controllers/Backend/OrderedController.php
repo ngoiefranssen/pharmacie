@@ -85,5 +85,9 @@ class OrderedController extends Controller
         //
     }
 
-    
+    public function ordereds_delete($id)
+    {
+        
+    }
+
 }
