@@ -32,7 +32,7 @@
     <tbody class="text-gray-700">
 
       {{-- @if ( $cashiers->cout() ) --}}
-      @foreach ( $cashiers as $cashier)
+      @foreach ( $cashiers as $cashier )
 
          <tr class="bg-gray-100">
           <td class="w-1/3 text-left py-3 px-4">{{ $cashier->id }}</td>
