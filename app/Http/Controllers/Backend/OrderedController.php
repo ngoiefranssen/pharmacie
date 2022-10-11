@@ -42,7 +42,17 @@ class OrderedController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'patient_id' => 'required',
+            'medication_id' => 'required',
+            'ordered_date' => 'required|date',
+            'delivery_date' => 'required|date',
+            'ordered_description' => 'required|max:255',
+        ],
+        [
+
+        ]);
     }
 
     /**

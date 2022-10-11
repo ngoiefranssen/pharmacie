@@ -49,6 +49,17 @@
                     <input type="date" name="delivery_date" id="delivery_date" placeholder="Enter date_invoice...." autocomplete="delivery_date" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
+
+                <div class="col-span-6 sm:col-span-3">
+                    @error('description_invoice')
+                        <div class="text-blue-600">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-4 xl:w-100">
+                        <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="ordered_description" name="ordered_description" rows="3" placeholder="Your description...."></textarea>
+                    </div>
+                </div>
+
             </div>
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
