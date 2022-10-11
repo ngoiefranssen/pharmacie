@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Invoice;
 use App\Models\Medication;
+use App\Models\Pharmacist;
 use Faker\Provider\Medical;
 use Illuminate\Http\Request;
 use Spatie\LaravelIgnition\Solutions\SolutionProviders\ViewNotFoundSolutionProvider;
@@ -29,7 +32,11 @@ class MedicationController extends Controller
      */
     public function create()
     {
-        //
+        $pharmacists = Pharmacist::get();
+        $invoices = Invoice::get();
+        $categories = Category::get();
+
+        return view('medications.index', 'pharmacists', 'invoices', 'categories');
     }
 
     /**

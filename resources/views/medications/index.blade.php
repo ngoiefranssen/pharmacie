@@ -22,13 +22,13 @@
       <thead class="bg-gray-800 text-white">
         <tr>
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">#</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom_pharmacien</td>
-          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom_categorie</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom_facture</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom</td>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom_cat</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Description_fact</th>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom_medication</td>
-            <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Date_fabrication</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date_expiration</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Description_medicament</td>
+            {{-- <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Date_fabrication</th> --}}
+          {{-- <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date_expiration</th> --}}
+          {{-- <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Description_medicament</td> --}}
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Actions</td>
         </tr>
       </thead>
@@ -38,10 +38,13 @@
 
          <tr class="bg-gray-100">
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->id }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $medication->cashier->name_cashier }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $medication->description_invoice }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $medication->amount }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $medication->date_invoice }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->pharmacist->name_pharmacist }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->category->name_category }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->invoice->description_invoice }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->name_medication }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->category->manufacturing_date }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->invoice->Expiry_date }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->description_medication }}</td>
           <td class="w-1/3 text-left py-3 px-4">
             <a href="{{route('invoices.show', $invoice->id )}}"><i class="fa-solid fa-eye"></i></a>
             <a href="{{route('invoices.edit', $invoice->id )}}"><i class="far fa-edit"></i></a>
