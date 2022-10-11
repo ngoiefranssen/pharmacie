@@ -48,4 +48,4 @@ Route::resource('categories', CategoryController::class);
 Route::get('/delete_category/{id}', [CategoryController::class, 'delete_category'])->name('delete_category.delete');
 
 Route::resource('medications', MedicationController::class);
-Route::get('/medication.delete/{id}', [])
+Route::get('/medication_delete/{id}', [MedicationController::class, 'medication_delete'])->name('medication_delete.delete');

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Medication;
+use Faker\Provider\Medical;
 use Illuminate\Http\Request;
+use Spatie\LaravelIgnition\Solutions\SolutionProviders\ViewNotFoundSolutionProvider;
 
 class MedicationController extends Controller
 {
@@ -14,7 +17,9 @@ class MedicationController extends Controller
      */
     public function index()
     {
-        //
+        $medications = Medication::get();
+        
+        return view('medications.index', compact('medications'));
     }
 
     /**
@@ -85,6 +90,6 @@ class MedicationController extends Controller
 
     public function medication_delete($id)
     {
-        
+
     }
 }
