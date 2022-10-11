@@ -84,7 +84,11 @@ class MedicationController extends Controller
      */
     public function show($id, Pharmacist $pharmacist, Invoice $invoice, Category $category)
     {
-        
+        $medication = Medication::find($id);
+
+        return view('medications.show', compact(
+            ['$pharmacist', 'invoice', 'category']
+        ));
     }
 
     /**
