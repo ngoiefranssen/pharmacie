@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Medication;
 use App\Models\Ordered;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class OrderedController extends Controller
@@ -26,7 +28,10 @@ class OrderedController extends Controller
      */
     public function create()
     {
-        //
+        $patients = Patient::get();
+        $medications = Medication::get();
+
+        return view('ordereds.index', compact('patients', 'medications'));
     }
 
     /**
