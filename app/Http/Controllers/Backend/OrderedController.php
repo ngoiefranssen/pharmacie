@@ -69,11 +69,11 @@ class OrderedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Patient $patient, Medication $medication)
     {
-        $ordered = Ordered::find($id);
+        $ordered_show = Ordered::find($id);
 
-        
+        return view('ordereds.show', compact('patient', 'medication'));
     }
 
     /**
@@ -84,7 +84,16 @@ class OrderedController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ordered_edit = Ordered::find($id);
+        $patients_edit = Patient::get();
+        $medication_edit = Medication::get();
+
+        return view('ordereds.edit', compact([
+            
+            'ordered_edit',
+            'patients_edit',
+            'medication_edit',
+        ]));
     }
 
     /**
