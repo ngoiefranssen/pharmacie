@@ -51,7 +51,29 @@ class MedicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            
+            'pharmacist_id' => 'required',
+            'category_id' => 'required',
+            'invoice_id' => 'required',
+            'name_medication' => 'required|max:50',
+            'manufacturing_date' => 'required|date',
+            'Expiry_date' => 'required|date',
+            'description_medication' => 'required|max:255',
+        ],
+        [
+            'pharmacist_id.required' => '',
+            'category_id.required' => '',
+            'invoice_id.required' => '',
+            'name_medication.required' => '',
+            'manufacturing_date.required' => '',
+            'Expiry_date.required' => '',
+            'description_medication.required' => '',   
+        ]);
+
+        Medication::create($request->all());
+
+        return redirect()->route('medications.index')->with('message', 'Medication created successfully');
     }
 
     /**
@@ -60,9 +82,9 @@ class MedicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Pharmacist $pharmacist, Invoice $invoice, Category $category)
     {
-        //
+        
     }
 
     /**

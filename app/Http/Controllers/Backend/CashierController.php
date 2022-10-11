@@ -115,16 +115,6 @@ class CashierController extends Controller
 
         $cashier->update($request->all());
 
-        // Cashier::find($id)->update([
-
-        //     'name_cashier' => $request->name_cashier,
-        //     'first_name_cashier' => $request->first_name_cashier,
-        //     'num_tel_cashier' => $request->num_tel_cashier,
-        //     'email_cashier' => $request->email_cahsier,
-        //     'create_at' => Carbon::now(),
-
-        // ]);
-
         return redirect()->route('cashiers.index')->with('message', 'Caissier mondifiée avec succès');
 
     }
