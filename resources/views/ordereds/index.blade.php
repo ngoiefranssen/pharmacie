@@ -26,7 +26,7 @@
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom_medicaments</th>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date_commande</th>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date_delivrer</td>
-          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Commande_description</th>
+          {{-- <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Commande_description</th> --}}
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Actions</td>
         </tr>
       </thead>
