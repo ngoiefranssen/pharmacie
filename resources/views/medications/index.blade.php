@@ -3,7 +3,7 @@
 
 
 <div class="my-5 ml-12 flex justify-left ">
-    <a href="{{ route('medications.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_invoices</a>
+    <a href="{{ route('medications.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_medication</a>
 </div>
 
 @if ($message = Session::get('message'))
@@ -24,7 +24,7 @@
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">#</th>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom</td>
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom_cat</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Description_fact</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Description_facture</th>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom_medication</td>
             {{-- <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Date_fabrication</th> --}}
           {{-- <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date_expiration</th> --}}
@@ -45,9 +45,9 @@
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->invoice->Expiry_date }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->description_medication }}</td>
           <td class="w-1/3 text-left py-3 px-4">
-            <a href="{{route('invoices.show', $invoice->id )}}"><i class="fa-solid fa-eye"></i></a>
-            <a href="{{route('invoices.edit', $invoice->id )}}"><i class="far fa-edit"></i></a>
-            <a href="{{route('delete_invoice.delete', $invoice->id )}}"><i class=" fas fa-trash-alt"></i></a>
+            <a href="{{route('medications.show', $medication->id )}}"><i class="fa-solid fa-eye"></i></a>
+            <a href="{{route('medications.edit', $medication->id )}}"><i class="far fa-edit"></i></a>
+            <a href="{{route('medication_delete.delete', $medication->id )}}"><i class=" fas fa-trash-alt"></i></a>
           </td>
         </tr>
       @endforeach
@@ -55,6 +55,4 @@
     </table>
   </div>
 </div>
-
-
 @endsection
