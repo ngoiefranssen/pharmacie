@@ -99,7 +99,18 @@ class MedicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $medication = Medication::find($id);
+        $pharmacists = Pharmacist::get();
+        $invoices = Invoice::get();
+        $categories = Category::get();
+
+        return view('medications.index',
+        [
+            'medication',
+            'pharmacists',
+            'invoices',
+            'categories',
+        ]);
     }
 
     /**
@@ -109,9 +120,22 @@ class MedicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Medication $medication)
     {
-        //
+        $request->validate([
+
+            'pharmacist_id' => 'required',
+            'category_id' => 'required',
+            'invoice_id' => 'required',
+            'name_medication' => 'required|max:50',
+            'manufacturing_date' => 'required|date',
+            'Expiry_date' => 'required|date',
+            'description_medication' => 'required|max:255',
+        ]);
+
+        $medication->update($request->all());
+
+        return redirect()->route('medications.index')->with('message', 'Le medication a ete mondifiée avec succès');
     }
 
     /**
