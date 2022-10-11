@@ -103,9 +103,28 @@ class OrderedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Ordered $ordered_update)
     {
-        //
+        $request->validate([
+
+            'patient_id' => 'required',
+            'medication_id' => 'required',
+            'ordered_date' => 'required|date',
+            'delivery_date' => 'required|date',
+            'ordered_description' => 'required|max:255',
+        ],
+        [
+            'patient_id.required' => '',
+            'medication_id.required' => '',
+            'ordered_date.required' => '',
+            'delivery_date.required' => '',
+            'ordered_description.required' => '',
+        ]);
+
+        $ordered_update->update($request->all());
+
+        return redirect()->route('ordereds.index')->with('message', );
+
     }
 
     /**
