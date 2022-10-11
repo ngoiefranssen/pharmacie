@@ -140,7 +140,10 @@ class OrderedController extends Controller
 
     public function ordered_delete($id)
     {
-        // $delete_ordered = 
+        $delete_ordered = Ordered::find($id);
+        $delete_ordered->delete();
+
+        return back()->with('message', 'la commande a ete supprimer avec succès');
     }
 
 }
