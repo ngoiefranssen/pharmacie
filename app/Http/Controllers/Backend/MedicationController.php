@@ -82,4 +82,9 @@ class MedicationController extends Controller
     {
         //
     }
+
+    public function medication_delete($id)
+    {
+        
+    }
 }

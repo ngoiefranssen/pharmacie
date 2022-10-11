@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CashierController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\InvoiceController;
+use App\Http\Controllers\Backend\MedicationController;
 use App\Http\Controllers\Backend\PatientController;
 use App\Http\Controllers\Backend\PharmacistController;
 use Illuminate\Support\Facades\Route;
@@ -45,3 +46,6 @@ Route::get('/delete_pharmacist/{id}', [PharmacistController::class, 'delete_phar
 
 Route::resource('categories', CategoryController::class);
 Route::get('/delete_category/{id}', [CategoryController::class, 'delete_category'])->name('delete_category.delete');
+
+Route::resource('medications', MedicationController::class);
+Route::get('/medication.delete/{id}', [])
