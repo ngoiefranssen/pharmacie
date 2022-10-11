@@ -22,4 +22,9 @@ class Invoice extends Model
     {
         return $this->belongsTo(Cashier::class);
     }
+
+    public function medications()
+    {
+        return $this->hasMany(Medication::class);
+    }
 }

@@ -21,4 +21,9 @@ class Pharmacist extends Model
     {
         return $this->hasMany(Category::class);
     }
+
+    public function medications()
+    {
+        return $this->hasMany(Medication::class);
+    }
 }
