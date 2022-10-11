@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ordered;
 use Illuminate\Http\Request;
 
 class OrderedController extends Controller
@@ -14,7 +15,8 @@ class OrderedController extends Controller
      */
     public function index()
     {
-        //
+        $ordereds = Ordered::get();
+        return view('ordereds.index', compact('ordereds'));
     }
 
     /**
