@@ -125,6 +125,6 @@ class CategoryController extends Controller
         $category_delete = Category::find($id);
         $category_delete->delete();
 
-        return back()->with('message', '');
+        return back()->with('message', 'Le categorie a ete supprimer avec succès');
     }
 }
