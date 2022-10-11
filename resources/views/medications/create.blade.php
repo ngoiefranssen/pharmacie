@@ -69,14 +69,24 @@
                 </div>
 
                <div class="col-span-6 sm:col-span-3">
-                @error('description_invoice')
-                    <div class="text-blue-600">{{ $message }}</div>
-                @enderror
-                <div class="mb-4 xl:w-100">
-                    <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
-                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_invoice" name="description_invoice" rows="3" placeholder="Your description...."></textarea>
+                    @error('description_invoice')
+                        <div class="text-blue-600">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-4 xl:w-100">
+                        <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_invoice" name="description_invoice" rows="3" placeholder="Your description...."></textarea>
+                    </div>
                 </div>
-            </div>
+
+                <div class="col-span-6 sm:col-span-3">
+                    @error('description_medication')
+                        <div class="text-blue-600">{{ $message }}</div>
+                    @enderror
+                    <div class="mb-4 xl:w-100">
+                        <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_medication" name="description_medication" rows="3" placeholder="Your description...."></textarea>
+                    </div>
+                </div>
             </div>
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
