@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::get();
+        $categories = Category::all();
 
         return view('categories.index', compact('categories'));
     }
@@ -75,10 +75,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,Pharmacist $pharmacist_all)
     {
         $category = Category::find($id);
-        $pharmacist_all = Pharmacist::all();
 
         return view('categories.index', compact('category', 'pharmacist_all'));
     }

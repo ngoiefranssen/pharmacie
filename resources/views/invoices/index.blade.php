@@ -31,7 +31,7 @@
       </thead>
     <tbody class="text-gray-700">
 
-      {{-- @if ( $cashiers->cout() ) --}}
+      {{-- @if ( $invoices->cout() ) --}}
       @foreach ( $invoices as $invoice )
 
          <tr class="bg-gray-100">
