@@ -28,7 +28,7 @@
         </tr>
       </thead>
     <tbody class="text-gray-700">
-      @foreach ( $categories as $category )
+      @foreach ($categories as $category)
          <tr class="bg-gray-100">
           <td class="w-1/3 text-left py-3 px-4">{{ $category->id }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $category->pharmacist->name_pharmacist }}</td>
@@ -40,7 +40,7 @@
             <a href="{{route('delete_category.delete', $category->id )}}"><i class=" fas fa-trash-alt"></i></a>
           </td>
         </tr>
-      @endforeach
+        @endforeach
     </tbody>
     </table>
   </div>
