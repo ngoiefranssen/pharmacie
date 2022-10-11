@@ -86,7 +86,7 @@ class OrderedController extends Controller
     {
         $ordered_edit = Ordered::find($id);
         $patients_edit = Patient::get();
-        $medication_edit = Medication::get();
+        $medications_edit = Medication::get();
 
         return view('ordereds.edit', compact([
             
