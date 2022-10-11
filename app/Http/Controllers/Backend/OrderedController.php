@@ -51,8 +51,16 @@ class OrderedController extends Controller
             'ordered_description' => 'required|max:255',
         ],
         [
-
+            'patient_id.required' => '',
+            'medication_id.required' => '',
+            'ordered_date.required' => '',
+            'delivery_date.required' => '',
+            'ordered_description.required' => '',
         ]);
+
+        Ordered::create($request->all());
+
+        return redirect()->route('ordereds.index')->with('message','Ordered created successfully');
     }
 
     /**
@@ -63,7 +71,9 @@ class OrderedController extends Controller
      */
     public function show($id)
     {
-        //
+        $ordered = Ordered::find($id);
+
+        
     }
 
     /**
