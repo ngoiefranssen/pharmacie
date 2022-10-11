@@ -122,6 +122,9 @@ class CategoryController extends Controller
 
     public function delete_category($id)
     {
+        $category_delete = Category::find($id);
+        $category_delete->delete();
 
+        return back()->with('message', '');
     }
 }
