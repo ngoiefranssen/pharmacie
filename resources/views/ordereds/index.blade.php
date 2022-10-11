@@ -35,13 +35,11 @@
       @foreach ( $ordereds as $ordered )
          <tr class="bg-gray-100">
           <td class="w-1/3 text-left py-3 px-4">{{ $ordered->id }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->patient>name_patient }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->medication>name_medication }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->patient->name_patient }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->medication->name_medication }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $ordered->ordered_date }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->name_medication }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->category->manufacturing_date }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->invoice->Expiry_date }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->description_medication }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->delivery_date }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->ordered_description }}</td>
           <td class="w-1/3 text-left py-3 px-4">
             <a href="{{route('ordereds.show', $ordered->id )}}"><i class="fa-solid fa-eye"></i></a>
             <a href="{{route('ordereds.edit', $ordered->id )}}"><i class="far fa-edit"></i></a>
