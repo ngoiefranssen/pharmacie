@@ -19,4 +19,15 @@ class Medication extends Model
         'Expiry_date',
         'description_medication',
     ];
+
+
+    public function pharmacist()
+    {
+        return $this->belongsTo(Pharmacist::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
