@@ -35,7 +35,6 @@
     <tbody class="text-gray-700">
 
       @foreach ( $medications as $medication )
-
          <tr class="bg-gray-100">
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->id }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->pharmacist->name_pharmacist }}</td>

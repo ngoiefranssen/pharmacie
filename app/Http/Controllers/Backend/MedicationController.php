@@ -31,11 +31,12 @@ class MedicationController extends Controller
      */
     public function create()
     {
-        $pharmacists = Pharmacist::all();
-        $invoices = Invoice::all();
-        $categories = Category::all();
+        $pharmacists = Pharmacist::get();
+        $invoices = Invoice::get();
+        $categories = Category::get();
 
-        return view('medications.index', [
+        return view('medications.index',
+        [
             'pharmacists',
             'invoices',
             'categories',
