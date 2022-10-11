@@ -13,4 +13,9 @@ class Ordered extends Model
     {
         return $this->belongsTo(Patient::class);
     }
+
+    public function medication()
+    {
+        return $this->belongsTo(Medication::class);
+    }
 }

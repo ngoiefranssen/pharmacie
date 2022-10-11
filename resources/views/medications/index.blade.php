@@ -22,9 +22,9 @@
       <thead class="bg-gray-800 text-white">
         <tr>
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">#</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom</td>
-          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom_cat</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Description_facture</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom_pharmaciens</td>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom_categories</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Descriptions_factures</th>
           <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom_medication</td>
             {{-- <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Date_fabrication</th> --}}
           {{-- <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date_expiration</th> --}}

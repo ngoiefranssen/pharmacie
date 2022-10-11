@@ -35,4 +35,9 @@ class Medication extends Model
     {
         return $this->belongsTo(Invoice::class);
     }
+
+    public function ordereds()
+    {
+        return $this->hasMany(Ordered::class);
+    }
 }
