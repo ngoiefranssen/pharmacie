@@ -43,7 +43,7 @@
           <td class="w-1/3 text-left py-3 px-4">
             <a href="{{route('ordereds.show', $ordered->id )}}"><i class="fa-solid fa-eye"></i></a>
             <a href="{{route('ordereds.edit', $ordered->id )}}"><i class="far fa-edit"></i></a>
-            <a href="{{route('ordereds_delete.delete', $ordered->id )}}"><i class=" fas fa-trash-alt"></i></a>
+            <a href="{{route('ordered_delete.delete', $ordered->id )}}"><i class=" fas fa-trash-alt"></i></a>
           </td>
         </tr>
       @endforeach
