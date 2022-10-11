@@ -24,30 +24,29 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    @error('amount')
-                        <div class="text-blue-600">{{ $message }}</div>
+                    @error('medication_id')
+                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="number" name="amount" id="amount" placeholder="Enter amount...." autocomplete="amount" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="medication_id" id="medication_id">
+                        @foreach($medications as $medication)
+                            <option value="{{ $medication->id }}">{{ $medication->name_medication }}</option>
+                        @endforeach
+                    </select>
                 </div>
-
-
-               {{-- description --}}
-
-               <div class="col-span-6 sm:col-span-3">
-                @error('description_invoice')
-                    <div class="text-blue-600">{{ $message }}</div>
-                @enderror
-                <div class="mb-4 xl:w-100">
-                    <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
-                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_invoice" name="description_invoice" rows="3" placeholder="Your description...."></textarea>
-                </div>
-            </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    @error('date_invoice')
+                    @error('ordered_date')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="date" name="date_invoice" id="date_invoice" placeholder="Enter date_invoice...." autocomplete="date_invoice" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="date" name="ordered_date" id="ordered_date" placeholder="Enter amount...." autocomplete="ordered_date" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+
+                <div class="col-span-6 sm:col-span-3">
+                    @error('delivery_date')
+                        <div class="text-blue-600">{{ $message }}</div>
+                    @enderror
+                    <input type="date" name="delivery_date" id="delivery_date" placeholder="Enter date_invoice...." autocomplete="delivery_date" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
             </div>
