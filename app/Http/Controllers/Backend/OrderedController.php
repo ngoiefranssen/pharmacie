@@ -123,7 +123,7 @@ class OrderedController extends Controller
 
         $ordered_update->update($request->all());
 
-        return redirect()->route('ordereds.index')->with('message', );
+        return redirect()->route('ordereds.index')->with('message', 'Commnade mondifiée avec succès');
 
     }
 
@@ -140,7 +140,7 @@ class OrderedController extends Controller
 
     public function ordered_delete($id)
     {
-
+        // $delete_ordered = 
     }
 
 }

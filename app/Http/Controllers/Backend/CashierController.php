@@ -97,7 +97,7 @@ class CashierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cashier $cashier) //Cashier $cashier
+    public function update(Request $request, Cashier $cashier)
     {
        $request->validate([
 
@@ -134,9 +134,9 @@ class CashierController extends Controller
     //     return back()->with('message', 'Le caissier a ete supprimer avec succès');
     // }
 
-    public function delete_Cashier($id)
+    public function delete_Cashier(Cashier $cashier_delete)
     {
-        $cashier_delete = Cashier::find($id);
+        // $cashier_delete = Cashier::find($id);
 
         $cashier_delete->delete();
 
