@@ -151,6 +151,9 @@ class MedicationController extends Controller
 
     public function medication_delete($id)
     {
+        $delete_medication = Medication::find($id);
+        $delete_medication->delete();
 
+        return back()->with('message', 'le medicement a ete supprimer avec succès');
     }
 }

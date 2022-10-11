@@ -1,4 +1,3 @@
-
 @extends('layouts.home')
 @section('content')
     
@@ -7,9 +6,9 @@
         <p class="text-sm leading-center"></p>
       <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
 
-        <form action="{{ route('medications.store') }}" method="POST" class="" enctype="multipart/form-data">
+        <form action="{{ route('medications.update') }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
-            @method('post')
+            @method('PUT')
           <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
               <div class="grid grid-cols-6 gap-6">
@@ -20,7 +19,7 @@
                     @enderror
                     <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="pharmacist_id" id="pharmacist_id">
                         @foreach($pharmacists as $pharmacist)
-                            <option value="{{ $pharmacist->id }}">{{ $pharmacist->name_pharmacist }}</option>
+                            <option value="{{ $pharmacist->id }}" {{ $medication->pharmacist_id == $pharmacist->id ? 'select' : '' }}>{{ $pharmacist->name_pharmacist }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -31,7 +30,7 @@
                     @enderror
                     <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category_id" id="category_id">
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name_category }}</option>
+                            <option value="{{ $category->id }}" {{ $medication->category-> }}>{{ $category->name_category }}</option>
                         @endforeach
                     </select>
                 </div>
