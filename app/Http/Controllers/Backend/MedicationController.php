@@ -24,7 +24,6 @@ class MedicationController extends Controller
         
         return view('medications.index', compact('medications'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +35,11 @@ class MedicationController extends Controller
         $invoices = Invoice::all();
         $categories = Category::all();
 
-        return view('medications.index', 'pharmacists', 'invoices', 'categories');
+        return view('medications.index', [
+            'pharmacists',
+            'invoices',
+            'categories',
+        ]);
     }
 
     /**
