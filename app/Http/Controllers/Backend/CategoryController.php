@@ -77,9 +77,8 @@ class CategoryController extends Controller
      */
     public function edit($id,Pharmacist $pharmacist_all)
     {
-        $category = Category::find($id);
-
-        return view('categories.index', compact('category', 'pharmacist_all'));
+        $category_edit = Category::find($id);
+        return view('categories.index', compact('category_edit', 'pharmacist_all'));
     }
 
     /**

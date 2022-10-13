@@ -92,7 +92,6 @@ class InvoiceController extends Controller
     public function show($id, Cashier $cashier)
     {
         $invoice = Invoice::find($id);
-        // $cashier = Cashier::all();
 
         return view('invoices.show', compact('invoice', 'cashier'));
     }

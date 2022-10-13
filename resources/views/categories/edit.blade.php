@@ -5,17 +5,7 @@
     <div class="md:grid md:grid-cols-0 md:gap-6">
         <p class="text-sm leading-center"></p>
       <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
-
-          {{-- @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-          @endif --}}
-        <form action="{{ route('categories.update', $category->id) }}" method="POST" class="" enctype="multipart/form-data">
+        <form action="{{ route('categories.update', $category_edit->id ) }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
             @method('PUT')
           <div class="shadow overflow-hidden sm:rounded-md">
@@ -28,7 +18,7 @@
                     @enderror
                     <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="pharmacist_id" id="pharmacist_id">
                         @foreach( $pharmacists as $pharmacist )
-                            <option value="{{ $pharmacist->id }}" {{ $category->pharmacist_id == $pharmacist->id ? 'select' : '' }}>{{ $pharmacist->name_pharmacist }}</option>
+                            <option value="{{ $pharmacist->id }}" {{ $category_edit->pharmacist_id == $pharmacist->id ? 'select' : '' }}>{{ $pharmacist->name_pharmacist }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -37,7 +27,7 @@
                     @error('name_category')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="text" name="name_category" value="{{ $category->name_category }}" id="name_category" placeholder="Enter name...." autocomplete="name_category" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="text" name="name_category" value="{{ $category_edit->name_category }}" id="name_category" placeholder="Enter name...." autocomplete="name_category" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                <div class="col-span-12 sm:col-span-6">
@@ -46,7 +36,7 @@
                     @enderror
                     <div class="mb-4 xl:w-100">
                         <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_category" name="description_category" rows="3" placeholder="Your description....">{{ $category->description_category }}</textarea>
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_category" name="description_category" rows="3" placeholder="Your description....">{{ $category_edit->description_category }}</textarea>
                     </div>
                 </div>
 
