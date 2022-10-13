@@ -46,7 +46,7 @@ Route::resource('pharmacists', PharmacistController::class);
 Route::get('/delete_pharmacist/{id}', [PharmacistController::class, 'delete_pharmacist'])->name('delete_pharmacist.delete');
 
 Route::resource('categories', CategoryController::class);
-Route::get('/delete_category/{id}', [CategoryController::class, 'delete_category'])->name('delete_category.delete');
+Route::get('/delete_category/{id}', [ CategoryController::class, 'delete_category' ])->name('delete_category.delete');
 
 Route::resource('medications', MedicationController::class);
 Route::get('/medication_delete/{id}', [MedicationController::class, 'medication_delete'])->name('medication_delete.delete');
