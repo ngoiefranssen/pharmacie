@@ -20,10 +20,10 @@ class MedicationFactory extends Factory
             'pharmacist_id' => '' ,
             'category_id' => '' ,
             'invoice_id' => '' ,
-            'name_medication' => '' ,
-            'manufacturing_date' => '' ,
-            'Expiry_date' => '' ,
-            'description_medication' => '' ,
+            'name_medication' => $faker->name_medication ,
+            'manufacturing_date' => $faker->manufacturing_date ,
+            'Expiry_date' => $faker->Expiry_date ,
+            'description_medication' => $faker->description_medication ,
         ];
     }
 }
