@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Category;
+use App\Models\Invoice;
 use App\Models\Pharmacist;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,7 +22,7 @@ class MedicationFactory extends Factory
         return [
             'pharmacist_id' => Factory(Pharmacist::class)->create()->id,
             'category_id' =>  Factory(Category::class)->create()->id,
-            'invoice_id' =>  Factory(),
+            'invoice_id' =>  Factory(Invoice::class)->create()->id,
             'name_medication' => $faker->name_medication ,
             'manufacturing_date' => $faker->manufacturing_date,
             'Expiry_date' => $faker->Expiry_date ,
