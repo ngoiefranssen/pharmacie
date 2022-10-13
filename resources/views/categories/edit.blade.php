@@ -17,8 +17,8 @@
                          <div class="text-blue-600">{{ $message }}</div>
                     @enderror
                     <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="pharmacist_id" id="pharmacist_id">
-                        @foreach( $pharmacists as $pharmacist )
-                            <option value="{{ $pharmacist->id }}" {{ $category_edit->pharmacist_id == $pharmacist->id ? 'select' : '' }}>{{ $pharmacist->name_pharmacist }}</option>
+                        @foreach( $pharmacists_all as $pharmacist_all )
+                            <option value="{{ $pharmacist_all->id }}" {{ $category_edit->pharmacist_id == $pharmacist_all->id ? 'select' : '' }}>{{ $pharmacist_all->name_pharmacist }}</option>
                         @endforeach
                     </select>
                 </div>
