@@ -23,9 +23,9 @@ class MedicationFactory extends Factory
             'pharmacist_id' => $this->factory(Pharmacist::class)->create()->id,
             'category_id' =>  $this->factory(Category::class)->create()->id,
             'invoice_id' =>  $this->factory(Invoice::class)->create()->id,
-            'name_medication' => $this->faker->name_medication ,
-            'manufacturing_date' => $this->faker->manufacturing_date,
-            'Expiry_date' => $this->faker->Expiry_date ,
+            'name_medication' => $this->faker->name ,
+            'manufacturing_date' => $this->faker->date(),
+            'Expiry_date' => $this->faker->date() ,
             'description_medication' => $$this->faker->description_medication,
         ];
     }
