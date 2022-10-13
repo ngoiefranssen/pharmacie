@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::select('pharmacist_id', 'name_category',
-                                    'description_category')->all();
+                                    'description_category')->get_browser();
 
         return view('categories.index', compact('categories'));
     }
