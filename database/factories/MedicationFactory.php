@@ -17,7 +17,7 @@ class MedicationFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(Factory $factory, )
     {
         return [
             'pharmacist_id' => Factory(Pharmacist::class)->create()->id,
