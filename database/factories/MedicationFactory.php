@@ -17,16 +17,16 @@ class MedicationFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(Factory $factory, )
+    public function definition()
     {
         return [
-            'pharmacist_id' => Factory(Pharmacist::class)->create()->id,
-            'category_id' =>  Factory(Category::class)->create()->id,
-            'invoice_id' =>  Factory(Invoice::class)->create()->id,
-            'name_medication' => $faker->name_medication ,
-            'manufacturing_date' => $faker->manufacturing_date,
-            'Expiry_date' => $faker->Expiry_date ,
-            'description_medication' => $faker->description_medication,
+            'pharmacist_id' => $this->factory(Pharmacist::class)->create()->id,
+            'category_id' =>  $this->factory(Category::class)->create()->id,
+            'invoice_id' =>  $this->factory(Invoice::class)->create()->id,
+            'name_medication' => $this->faker->name_medication ,
+            'manufacturing_date' => $this->faker->manufacturing_date,
+            'Expiry_date' => $this->faker->Expiry_date ,
+            'description_medication' => $$this->faker->description_medication,
         ];
     }
 }
