@@ -15,5 +15,7 @@ class MedicatonSeeder extends Seeder
     public function run()
     {
         //
+
+        Medication::factory(5)->create();
     }
 }
