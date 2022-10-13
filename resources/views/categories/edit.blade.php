@@ -17,22 +17,22 @@
                          <div class="text-blue-600">{{ $message }}</div>
                     @enderror
                     <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="pharmacist_id" id="pharmacist_id">
-                        @foreach( $pharmacists_all as $pharmacist_all )
-                            <option value="{{ $pharmacist_all->id }}" {{ $category_edit->pharmacist_id == $pharmacist_all->id ? 'select' : '' }}>{{ $pharmacist_all->name_pharmacist }}</option>
+                        @foreach( $pharmacists as $pharmacist )
+                            <option value="{{ $pharmacist->id }}" {{ $category_edit->pharmacist_id == $pharmacist->id ? 'select' : '' }}>{{ $pharmacist->name_pharmacist }}</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                     @error('name_category')
-                        <div class="text-blue-600">{{ $message }}</div>
+                        <div class="text-blue-800">{{ $message }}</div>
                     @enderror
                     <input type="text" name="name_category" value="{{ $category_edit->name_category }}" id="name_category" placeholder="Enter name...." autocomplete="name_category" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                <div class="col-span-12 sm:col-span-6">
                     @error('description_category')
-                        <div class="text-blue-600">{{ $message }}</div>
+                        <div class="text-blue-800">{{ $message }}</div>
                     @enderror
                     <div class="mb-4 xl:w-100">
                         <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
