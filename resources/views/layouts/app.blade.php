@@ -28,25 +28,17 @@
 
             <!-- Page Content -->
             <main>
-                <div class="flex">
-                    <div class="flex flex-col">
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Medicaments') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Caissiers') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Categories') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Commandes') }}
-                        </x-nav-link><x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Patiens') }}
-                        </x-nav-link><x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Parmacistes') }}
-                        </x-nav-link>
+                <div class="flex max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <!-- sidebar navigation -->
+                    <div class="flex px-3 py-2 flex-col min-h-screen max-w-lg bg-white shadow-lg space-y-5 p-4">
+                        <a href="{{ route('medications.index') }}" active="{{ request()->routeIs('medications.index') }}">{{ __('Medicaments') }}</a>
+                        <a href="{{ route('cashiers.index') }}" active="{{ request()->routeIs('cashiers.index') }}">{{ __('Caissiers') }}</a>
+                        <a href="{{ route('categories.index') }}" active="{{ request()->routeIs('categories.index') }}">{{ __('Categories') }}</a>
+                        <a href="{{ route('ordereds.index') }}" active="{{ request()->routeIs('ordereds.index') }}">{{ __('Commandes') }}</a>
+                        <a href="{{ route('patients.index') }}" active="{{ request()->routeIs('patients.index') }}">{{ __('Patiens') }}
+                        </a><a href="{{ route('parmacists.index') }}" active="{{ request()->routeIs('parmacists.index') }}">{{ __('Parmacistes') }}</a>
                     </div>
+
 
                     {{ $slot }}
                 </div>
