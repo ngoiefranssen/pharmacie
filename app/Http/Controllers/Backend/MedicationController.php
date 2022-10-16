@@ -21,8 +21,10 @@ class MedicationController extends Controller
     public function index()
     {
         $medications = Medication::get();
+
+        // dd($medications);
         
-        return view('medications.index', compact('medications'));
+        return view('medications.index', ['medications' => $medications]);
     }
     /**
      * Show the form for creating a new resource.
@@ -135,7 +137,8 @@ class MedicationController extends Controller
 
         $medication->update($request->all());
 
-        return redirect()->route('medications.index')->with('message', 'Le medication a ete mondifiée avec succès');
+        return redirect()->route('medications.index')
+                         ->with('message', 'Le medication a ete mondifiée avec succès');
     }
 
     /**

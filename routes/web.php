@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () { return view('home.main'); });
+Route::get('/', function () { return view('home.main'); });  //->middleware('auth')
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'
 ])->group(function () { Route::get('/dashboard', function () {
