@@ -16,9 +16,9 @@
   </div>
 @endif
 
-<div class="md:px-32 py-1 w-full">
+<div class="">
   <div class="shadow overflow-hidden rounded border-b border-gray-200">
-    <table class="min-w-full bg-white">
+    <table class="w-[640px] table-fixed overflow-auto">
       <thead class="bg-gray-800 text-white">
         <tr>
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">#</th>

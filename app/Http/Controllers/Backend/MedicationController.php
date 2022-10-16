@@ -37,11 +37,12 @@ class MedicationController extends Controller
         $invoices = Invoice::get();
         $categories = Category::get();
 
-        return view('medications.create',
-        
+        return view('medications.create', compact(
             'pharmacists',
             'invoices',
             'categories',
+        )
+        
         );
     }
 
