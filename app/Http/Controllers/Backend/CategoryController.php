@@ -75,10 +75,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,Pharmacist $pharmacists)
+    public function edit($id)
     {
+        $pharmacists = Pharmacist::get();
         $category_edit = Category::find($id);
-        return view('categories.index', compact('category_edit', 'pharmacists'));
+        return view('categories.edit', compact('category_edit', 'pharmacists'));
     }
 
     /**
