@@ -1,5 +1,4 @@
-@extends('layouts.home')
-@section('content')
+<x-app-layout>
 
 <div class="h-screen bg-white relative flex flex-col space-y-10 justify-center items-center">
     <div class="bg-white md:shadow-lg shadow-none rounded p-6 w-96" >
@@ -56,4 +55,4 @@
 </div>
 
 
-@endsection
+</x-app-layout>

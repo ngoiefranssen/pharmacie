@@ -1,5 +1,4 @@
-@extends('layouts.home')
-@section('content')
+<x-app-layout>
 
 
 {{-- @if ($message = Session::get('message'))
@@ -62,4 +61,4 @@
 </div>
 
     
-@endsection
+</x-app-layout>

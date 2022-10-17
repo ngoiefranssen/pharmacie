@@ -1,5 +1,4 @@
-@extends('layouts.home')
-@section('content')
+<x-app-layout>
     
 <div class="mt-10 sm:mt-0">
     <div class="md:grid md:grid-cols-0 md:gap-6">
@@ -72,4 +71,5 @@
       </div>
     </div>
 </div>
-@endsection
+
+<x-app-layout>

@@ -1,5 +1,4 @@
-@extends('layouts.home')
-@section('content')
+<x-app-layout>
 
 
 <div class="my-5 ml-12 flex justify-left ">
@@ -47,5 +46,4 @@
   </div>
 </div>
 
-
-@endsection
+<x-app-layout>

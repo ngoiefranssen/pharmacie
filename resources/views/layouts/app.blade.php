@@ -33,9 +33,9 @@
                     <div class="flex px-3 py-2 flex-col min-h-screen max-w-lg bg-white shadow-lg space-y-5 p-4">
                         <a href="{{ route('medications.index') }}" active="{{ request()->routeIs('medications.index') }}">{{ __('Medicaments') }}</a>
                         <a href="{{ route('cashiers.index') }}" active="{{ request()->routeIs('cashiers.index') }}">{{ __('Caissiers') }}</a>
-                        <a href="{{ route('categories.index') }}" active="{{ request()->routeIs('categories.index') }}">{{ __('Categories') }}</a>
+                        <a href="{{ route('categories.index') }}" active="{{ request()->routeIs('categories.index') }}">{{ __('categories') }}</a>
                         <a href="{{ route('ordereds.index') }}" active="{{ request()->routeIs('ordereds.index') }}">{{ __('Commandes') }}</a>
-                        <a href="{{ route('patients.index') }}" active="{{ request()->routeIs('patients.index') }}">{{ __('Patiens') }}
+                        <a href="{{ route('patients.index') }}" active="{{ request()->routeIs('patients.index') }}">{{ __('Patients') }}
                         </a><a href="{{ route('parmacists.index') }}" active="{{ request()->routeIs('parmacists.index') }}">{{ __('Parmacistes') }}</a>
                     </div>
 

@@ -1,5 +1,4 @@
-@extends('layouts.home')
-@section('content')
+<x-app-layout>
 
 <div class="my-5 ml-12 flex justify-left ">
     <a href="{{ route('categories.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_Categorie</a>
@@ -45,4 +44,4 @@
     </table>
   </div>
 </div>
-@endsection
+</x-app-layout>
