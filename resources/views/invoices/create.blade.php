@@ -1,9 +1,9 @@
 <x-app-layout>
     
-<div class="mt-10 sm:mt-0">
-    <div class="md:grid md:grid-cols-0 md:gap-6">
+<div class="content-center">
+    <div class="">
         <p class="text-sm leading-center"></p>
-      <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
+      <div class="pt-14">
 
           {{-- @if ($errors->any())
             <div class="alert alert-danger">
