@@ -6,7 +6,7 @@
     </h2>
   </x-slot>
 
-<div class="my-5 ml-3">
+<div class="my-3 ml-5">
     <a href="{{ route('cashiers.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_Cashier</a>
 </div>
 
