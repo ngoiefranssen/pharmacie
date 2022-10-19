@@ -55,7 +55,7 @@
     </tbody>
     </table>
   </div>
-  {{-- {{ $cashiers->links() }} --}}
+  {{ $cashiers->links() }}
 </div>
 
 
