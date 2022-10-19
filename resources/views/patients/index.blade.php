@@ -1,6 +1,12 @@
 <x-app-layout>
 
 
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('Patients') }}
+    </h2>
+  </x-slot>
+
 <div class="my-5 ml-3">
     <a href="{{ route('patients.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_patient</a>
 </div>
