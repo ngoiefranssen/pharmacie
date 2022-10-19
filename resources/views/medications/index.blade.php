@@ -1,6 +1,6 @@
 <x-app-layout>
 
-<div class="my-5 ml-10">
+<div class="my-5 ml-1">
     <a href="{{ route('medications.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_medication</a>
 </div>
 
@@ -14,9 +14,9 @@
   </div>
 @endif
 
-<div class="md:px-50 py-1 w-full">
+<div class="md:px-1 py-20 w-full">
   <div class="shadow overflow-hidden rounded border-b border-gray-200">
-    <table class="w-[640px] table-fixed overflow-auto">
+    <table class="min-w-full bg-white">
       <thead class="bg-gray-800 text-white">
         <tr>
           <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">#</th>
