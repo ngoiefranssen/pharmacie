@@ -18,7 +18,7 @@ class CashierController extends Controller
     public function index()
     {
         //
-        $cashiers = Cashier::all();
+        $cashiers = Cashier::paginate(2)->all();
         
         return view('cashiers.index', compact('cashiers'), [
             'cashiers' => DB::table('cashiers')->paginate(5)
