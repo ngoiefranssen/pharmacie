@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\CashierController;
 use App\Http\Controllers\Backend\OrderedController;
 use App\Http\Controllers\Backend\PatientController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\InvoiceController;
 use App\Http\Controllers\Backend\MedicationController;
 use App\Http\Controllers\Backend\PharmacistController;
 
@@ -44,5 +45,8 @@ Route::get('/delete_patient/{id}', [PatientController::class, 'delete_patient'])
 
 Route::resource('pharmacists', PharmacistController::class)->except(['delete']);
 Route::get('/delete_pharmacist/{id}', [PharmacistController::class, 'delete_pharmacist'])->name('delete_pharmacist.delete');
+
+Route::resource('invoices', InvoiceController::class)->except(['delete']);
+Route::get('/delete_invoice/{id}', [InvoiceController::class, 'delete_invoice'])->name('delete_invoice.delete');
 
 require __DIR__.'/auth.php';

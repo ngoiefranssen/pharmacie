@@ -1,7 +1,13 @@
 <x-app-layout>
 
-<div class="my-5 ml-10">
-    <a href="{{ route('categories.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Ajouter_Categorie</a>
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('Categories') }}
+    </h2>
+  </x-slot>
+
+<div class="my-5 ml-11">
+    <a href="{{ route('categories.create') }}" class="flex flex-justify bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-10">Ajouter_Categorie</a>
 </div>
 
 @if ($message = Session::get('message'))
