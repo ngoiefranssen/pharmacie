@@ -104,14 +104,15 @@ class CashierController extends Controller
             'name_cashier' => 'required|max:50',
             'first_name_cashier' => 'required|max:50',
             'num_tel_cashier' => 'required|max:30',
-            'email_cashier' => 'required|max:50',
+            'email_cashier' => 'required|max:50|email|unique ',
         ],
-        [
-            'name_cashier.required' => '',
-            'first_name_cashier.required' => '',
-            'num_tel_cashier.required' => '',
-            'email_cashier.required' => '',
-        ]);
+        // [
+        //     'name_cashier.required' => '',
+        //     'first_name_cashier.required' => '',
+        //     'num_tel_cashier.required' => '',
+        //     'email_cashier.required' => '',
+        // ]
+    );
 
         $cashier->update($request->all());
 

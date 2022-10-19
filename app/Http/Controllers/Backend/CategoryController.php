@@ -89,7 +89,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category_update)
+    public function update(Request $request, Category $category)
     {
         $request->validate([
 
@@ -97,13 +97,14 @@ class CategoryController extends Controller
             'name_category' => 'required|max:30',
             'description_category' => 'required|max:255',
         ],
-        [
-            'pharmacist_id.required' => '',
-            'name_category.required' => '',
-            'description_category.required' => '',
-        ]);
+        // [
+        //     'pharmacist_id.required' => '',
+        //     'name_category.required' => '',
+        //     'description_category.required' => '',
+        // ]
+        );
 
-        $category_update->update($request->all());
+        $category->update($request->all());
 
         return redirect()->route('categories.index')->with('message', 'mondifiée avec succès avec succèsCategorie mondifiée avec succès');
     }

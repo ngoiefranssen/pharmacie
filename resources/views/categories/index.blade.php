@@ -1,20 +1,20 @@
 <x-app-layout>
 
-<div class="my-5 ml-12 flex justify-left ">
-    <a href="{{ route('categories.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_Categorie</a>
+<div class="my-5 ml-10">
+    <a href="{{ route('categories.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Ajouter_Categorie</a>
 </div>
 
 @if ($message = Session::get('message'))
   <div class="md:px-64 py-1 w-full">
-    <div class="shadow overflow-hidden rounded border-b border-gray-200">
+    <div class="shadow overflow-hidden rounded border-b border-gray-800">
       <div class="alert alert-success">
-          <p class="text-blue-600 text-center">{{ $message }}</p>
+          <p class="text-white text-center">{{ $message }}</p>
       </div>
     </div>
   </div>
 @endif
 
-<div class="md:px-32 py-1 w-full">
+<div class="md:px-1 py-32 w-full">
   <div class="shadow overflow-hidden rounded border-b border-gray-200">
     <table class="min-w-full bg-white">
       <thead class="bg-gray-800 text-white">

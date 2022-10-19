@@ -5,7 +5,7 @@
         <p class="text-sm leading-center"></p>
       <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
 
-        <form action="{{ route('medications.update') }}" method="POST" class="" enctype="multipart/form-data">
+        <form action="{{ route('medications.update', $medication->id) }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
             @method('PUT')
           <div class="shadow overflow-hidden sm:rounded-md">

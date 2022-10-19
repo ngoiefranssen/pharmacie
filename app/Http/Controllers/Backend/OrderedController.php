@@ -31,7 +31,7 @@ class OrderedController extends Controller
         $patients = Patient::get();
         $medications = Medication::get();
 
-        return view('ordereds.index', compact('patients', 'medications'));
+        return view('ordereds.create', compact('patients', 'medications'));
     }
 
     /**
@@ -88,12 +88,12 @@ class OrderedController extends Controller
         $patients_edit = Patient::get();
         $medications_edit = Medication::get();
 
-        return view('ordereds.edit', compact([
+        return view('ordereds.edit', compact(
             
             'ordered_edit',
             'patients_edit',
-            'medication_edit',
-        ]));
+            'medications_edit',
+        ));
     }
 
     /**
@@ -103,7 +103,7 @@ class OrderedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ordered $ordered_update)
+    public function update(Request $request, Ordered $ordered)
     {
         $request->validate([
 
@@ -121,7 +121,7 @@ class OrderedController extends Controller
             'ordered_description.required' => '',
         ]);
 
-        $ordered_update->update($request->all());
+        $ordered->update($request->all());
 
         return redirect()->route('ordereds.index')->with('message', 'Commnade mondifiée avec succès');
 

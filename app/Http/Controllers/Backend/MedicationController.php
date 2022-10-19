@@ -107,13 +107,13 @@ class MedicationController extends Controller
         $invoices = Invoice::get();
         $categories = Category::get();
 
-        return view('medications.index',
-        [
+        return view('medications.edit', compact(
+            
             'medication',
             'pharmacists',
             'invoices',
             'categories',
-        ]);
+        ));
     }
 
     /**

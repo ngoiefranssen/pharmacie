@@ -16,6 +16,37 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div> --}}
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{route('medications.index')}}" active="{{request()->routeIs('medications.index')}}">
+                        {{ __('Medicaments') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{route('cashiers.index')}}" active="{{request()->routeIs('cashiers.index')}}">
+                        {{ __('Caissiers') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{route('categories.index')}}" active="{{request()->routeIs('categories.index')}}">
+                        {{ __('Categories') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{route('ordereds.index')}}" active="{{request()->routeIs('ordereds.index')}}">
+                        {{ __('Commandes') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{route('patients.index')}}" active="{{request()->routeIs('patients.index')}}">
+                        {{ __('Patients') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{route('pharmacists.index')}}" active="{{request()->routeIs('parmacists.index')}}">
+                        {{ __('Pharmacists') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

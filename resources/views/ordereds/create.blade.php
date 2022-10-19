@@ -1,9 +1,9 @@
 <x-app-layout>
     
-<div class="mt-10 sm:mt-0">
+<div class=" sm:mt-2 flex justify-center">
     <div class="md:grid md:grid-cols-0 md:gap-6">
         <p class="text-sm leading-center"></p>
-      <div class="mt-5 md:mt-0 md:col-span-2 flex justify-center pt-14">
+      <div class="mt-5 md:mt-0 md:col-span-2  pt-14">
         <form action="{{ route('ordereds.store') }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
             @method('post')
@@ -72,4 +72,4 @@
     </div>
 </div>
 
-<x-app-layout>
+</x-app-layout>

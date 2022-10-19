@@ -1,6 +1,6 @@
 <x-app-layout>
 
-<div class="my-5 ml-12 flex justify-left ">
+<div class="my-5 ml-12">
     <a href="{{ route('ordereds.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_ordered</a>
 </div>
 
@@ -37,7 +37,7 @@
           <td class="w-1/3 text-left py-3 px-4">{{ $ordered->medication->name_medication }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $ordered->ordered_date }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $ordered->delivery_date }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $ordered->ordered_description }}</td>
+          {{-- <td class="w-1/3 text-left py-3 px-4">{{ $ordered->ordered_description }}</td> --}}
           <td class="w-1/3 text-left py-3 px-4">
             <a href="{{route('ordereds.show', $ordered->id )}}"><i class="fa-solid fa-eye"></i></a>
             <a href="{{route('ordereds.edit', $ordered->id )}}"><i class="far fa-edit"></i></a>
@@ -50,4 +50,4 @@
   </div>
 </div>
 
-<x-app-layout>
+</x-app-layout>

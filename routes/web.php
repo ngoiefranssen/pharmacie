@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\CashierController;
-use App\Http\Controllers\Backend\MedicationController;
 use App\Http\Controllers\Backend\OrderedController;
 use App\Http\Controllers\Backend\PatientController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\MedicationController;
 use App\Http\Controllers\Backend\PharmacistController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -41,7 +42,7 @@ Route::get('/ordered_delete/{id}', [OrderedController::class, 'ordered_delete'])
 Route::resource('patients', PatientController::class)->except(['delete']);
 Route::get('/delete_patient/{id}', [PatientController::class, 'delete_patient'])->name('delete_patient.delete');
 
-Route::resource('parmacists', PharmacistController::class)->except(['delete']);
+Route::resource('pharmacists', PharmacistController::class)->except(['delete']);
 Route::get('/delete_pharmacist/{id}', [PharmacistController::class, 'delete_pharmacist'])->name('delete_pharmacist.delete');
 
 require __DIR__.'/auth.php';
