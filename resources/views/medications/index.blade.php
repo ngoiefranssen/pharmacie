@@ -14,7 +14,7 @@
   </div>
 @endif
 
-<div class="md:px-1 py-20 w-full">
+<div class="md:px-1 py-32 w-full">
   <div class="shadow overflow-hidden rounded border-b border-gray-200">
     <table class="min-w-full bg-white">
       <thead class="bg-gray-800 text-white">
