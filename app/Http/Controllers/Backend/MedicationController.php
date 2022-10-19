@@ -88,7 +88,9 @@ class MedicationController extends Controller
         $medication = Medication::find($id);
 
         return view('medications.show', compact(
-            'pharmacist', 'invoice', 'category'
+            'pharmacist',
+            'invoice',
+            'category',
         ));
     }
 
