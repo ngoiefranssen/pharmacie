@@ -36,7 +36,7 @@
                     @error('name_category')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="text" name="name_category" id="name_category" placeholder="Enter name...." autocomplete="name_category" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="text" name="name_category" id="name_category" placeholder="Entrer le nom...." autocomplete="name_category" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
 
@@ -48,7 +48,7 @@
                     @enderror
                     <div class="mb-4 xl:w-100">
                         <textarea class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_category" name="description_category" rows="3" placeholder="Your description...."></textarea>
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="description_category" name="description_category" rows="3" placeholder="Saississez le description...."></textarea>
                     </div>
                 </div>
 
