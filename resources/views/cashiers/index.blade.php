@@ -6,12 +6,12 @@
     </h2>
   </x-slot>
 
-<div class="my-5 ml-12 flex justify-left ">
+<div class="my-5 ml-3">
     <a href="{{ route('cashiers.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_Cashier</a>
 </div>
 
 @if ($message = Session::get('message'))
-  <div class="md:px-64 py-1 w-full">
+  <div class="md:px-22 py-1">
     <div class="shadow overflow-hidden rounded border-b border-gray-200">
       <div class="alert alert-success">
           <p class="text-blue-600 text-center">{{ $message }}</p>
