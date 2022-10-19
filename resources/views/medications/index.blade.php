@@ -40,9 +40,9 @@
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->category->name_category }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->invoice->description_invoice }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->name_medication }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $medication->category->manufacturing_date }}</td>
+          {{-- <td class="w-1/3 text-left py-3 px-4">{{ $medication->category->manufacturing_date }}</td>
           <td class="w-1/3 text-left py-3 px-4">{{ $medication->invoice->Expiry_date }}</td>
-          <td class="w-1/3 text-left py-3 px-4">{{ $medication->description_medication }}</td>
+          <td class="w-1/3 text-left py-3 px-4">{{ $medication->description_medication }}</td> --}}
           <td class="w-1/3 text-left py-3 px-4">
             <a href="{{route('medications.show', $medication->id )}}"><i class="fa-solid fa-eye"></i></a>
             <a href="{{route('medications.edit', $medication->id )}}"><i class="far fa-edit"></i></a>

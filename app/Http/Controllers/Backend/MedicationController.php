@@ -41,9 +41,7 @@ class MedicationController extends Controller
             'pharmacists',
             'invoices',
             'categories',
-        )
-        
-        );
+        ));
     }
 
     /**
