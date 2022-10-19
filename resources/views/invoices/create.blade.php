@@ -36,7 +36,7 @@
                     @error('amount')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="number" name="amount" id="amount" placeholder="Enter amount...." autocomplete="amount" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="number" name="amount" id="amount" placeholder="Entrer le montant...." autocomplete="amount" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
 
