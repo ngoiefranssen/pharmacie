@@ -14,11 +14,11 @@
                 </ul>
             </div>
           @endif --}}
-        <form action="{{ route('invoices.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('invoices.store') }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
             @method('post')
-          <div class="">
-            <div class="px-4 py-5 bg-white sm:p-6 ">
+          <div class="shadow overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
               <div class="grid grid-cols-6 gap-6">
 
                 <div class="col-span-6 sm:col-span-3">
