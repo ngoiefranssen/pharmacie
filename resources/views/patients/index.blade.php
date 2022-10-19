@@ -5,7 +5,7 @@
     <a href="{{ route('patients.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_patient</a>
 </div>
 
-<div class="md:px-32 py-1 w-full">
+<div class="md:px-1 py-32 w-full">
   <div class="shadow overflow-hidden rounded border-b border-gray-200">
     <table class="min-w-full bg-white">
       <thead class="bg-gray-800 text-white">
