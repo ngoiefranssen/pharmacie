@@ -1,7 +1,7 @@
 <x-app-layout>
 
 
-<div class="my-5 ml-3 flex justify-left ">
+<div class="my-5 ml-3">
     <a href="{{ route('patients.create') }}" class="flex flex-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded my-3 ml-5">Add_patient</a>
 </div>
 
