@@ -1,6 +1,6 @@
 <x-app-layout>
     
-<div class="content-center">
+<div class=" place-content-center">
     <div class="">
         <p class="text-sm leading-center"></p>
       <div class="pt-14">
