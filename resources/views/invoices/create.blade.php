@@ -1,6 +1,6 @@
 <x-app-layout>
     
-<div class="flex flex-justify-center">
+<div class="flex content-center">
     <div class="">
         <p class="text-sm leading-center"></p>
       <div class="pt-14">
@@ -14,7 +14,7 @@
                 </ul>
             </div>
           @endif --}}
-        <form class="flex flex-justify-center" action="{{ route('invoices.store') }}" method="POST" class="" enctype="multipart/form-data">
+        <form action="{{ route('invoices.store') }}" method="POST" class="" enctype="multipart/form-data">
             @csrf
             @method('post')
           <div class="shadow overflow-hidden sm:rounded-md">
