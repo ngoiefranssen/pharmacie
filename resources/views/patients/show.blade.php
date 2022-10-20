@@ -31,7 +31,7 @@
                  </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    <p>   Email : {{ $patient_show->email_patient }}</p>
+                    <p>Email : {{ $patient_show->email_patient }}</p>
                 </div>
 
             </div>

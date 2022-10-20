@@ -8,7 +8,7 @@
             <div class="px-4 py-5 bg-white sm:p-6">
 
                 <div class="col-span-6 sm:col-span-3 my-5">
-                    <h3 class="text-dark-600 "> Les informations du Facture</h3>
+                    <h3 class="text-dark-600 "> Les details du Facture de : {{ $invoice->cashier->name_cashier }}</h3>
                 </div>
 
               <div class="grid grid-cols-6 gap-6">

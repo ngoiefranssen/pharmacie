@@ -25,21 +25,21 @@
                     @error('name_cashier')
                          <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                  <input type="text" name="name_cashier" id="name_cashier" placeholder="Enter name cashier" autocomplete="name_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="name_cashier" id="name_cashier" placeholder="Entrer le nom d'un caissier..." autocomplete="name_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                     @error('first_name_cashier')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                  <input type="text" name="first_name_cashier" id="first_name_cashier" placeholder="Enter first name...." autocomplete="first_name_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="first_name_cashier" id="first_name_cashier" placeholder="Entrer le prenom d'un caissier...." autocomplete="first_name_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                     @error('num_tel_cashier')
                         <div class="text-blue-600">{{ $message }}</div>
                     @enderror
-                    <input type="number" name="num_tel_cashier" id="num_tel_cashier" placeholder="Enter num phone...." autocomplete="num_tel_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="number" name="num_tel_cashier" id="num_tel_cashier" placeholder="Entrer le numero d'un caissier...." autocomplete="num_tel_cashier" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
